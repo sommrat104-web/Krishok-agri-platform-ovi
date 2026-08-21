@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+<!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+
+  <!-- ===== Google Analytics ===== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+<script src="js/analytics.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  <title>বাজারদর - কৃষি সহায়তা</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .market-section {
+      background: var(--white);
+      padding: clamp(25px, 4vw, 45px);
+      border-radius: var(--radius);
+      margin: 30px 0;
+      box-shadow: var(--shadow);
+      width: 100%;
+    }
+    .market-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      border-bottom: 3px solid var(--secondary);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+    
+    /* ===== Live Badge ===== */
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #dc3545;
+      color: white;
+      padding: 4px 16px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      animation: pulse-live 1.5s infinite;
+    }
+    .live-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    @keyframes pulse-live {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    /* ===== Market Grid ===== */
+    .market-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-top: 15px;
+    }
+    @media (min-width: 600px) {
+      .market-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 992px) {
+      .market-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .crop-item {
+      background: var(--bg);
+      border-radius: 16px;
+      padding: 20px;
+      border-left: 5px solid var(--primary-light);
+      transition: 0.3s;
+      position: relative;
+    }
+    .crop-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .crop-item .crop-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .crop-item .crop-name {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .crop-item .crop-name i {
+      margin-right: 10px;
+      color: var(--primary-light);
+    }
+    .crop-item .crop-price {
+      font-size: clamp(1.2rem, 2vw, 1.4rem);
+      font-weight: 800;
+      color: #1a4d2a;
+    }
+    .crop-item .crop-price i {
+      font-size: 1rem;
+      color: #555;
+      margin-right: 4px;
+    }
+    .crop-item .crop-change {
+      font-size: 0.9rem;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .crop-change.up { background: #d4edda; color: #155724; }
+    .crop-change.down { background: #f8d7da; color: #721c24; }
+    .crop-change.stable { background: #fff3cd; color: #856404; }
+    .crop-item .crop-time {
+      font-size: 0.7rem;
+      color: var(--gray);
+      margin-top: 8px;
+    }
+    
+    /* ===== Admin Update ===== */
+    .admin-update-section {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: var(--radius);
+      margin-top: 25px;
+      border-left: 4px solid var(--secondary);
+    }
+    .admin-update-section h4 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .admin-update-section .form-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .admin-update-section input,
+    .admin-update-section select {
+      padding: 10px 14px;
+      border: 2px solid #d8e8d8;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      outline: none;
+      background: var(--white);
+      color: var(--text-dark);
+      flex: 1;
+      min-width: 120px;
+    }
+    .admin-update-section input:focus,
+    .admin-update-section select:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 4px rgba(46,125,94,0.1);
+    }
+    .admin-update-section .btn-update {
+      padding: 10px 24px;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .admin-update-section .btn-update:hover {
+      background: var(--primary-dark);
+      transform: scale(1.04);
+    }
+    
+    .detail-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      background: var(--primary);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+    .detail-btn:hover {
+      background: var(--secondary);
+      color: var(--text-dark);
+      transform: scale(1.05);
+    }
+    
+    .search-box {
+      margin-bottom: 20px;
+      padding: 14px 22px;
+      width: 100%;
+      max-width: 350px;
+      border: 2px solid #cde0cd;
+      border-radius: 60px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+      background: #fafffa;
+    }
+    .search-box:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 4px #b3dfc0;
+    }
+    
+    .no-result {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--gray);
+      display: none;
+    }
+    .no-result i {
+      font-size: 3rem;
+      color: #ccc;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    body.dark .crop-item { background: var(--white); }
+    body.dark .search-box { background: var(--white); border-color: var(--dark-border); }
+    body.dark .admin-update-section { background: var(--white); }
+    body.dark .admin-update-section input,
+    body.dark .admin-update-section select {
+      background: var(--white);
+      border-color: var(--dark-border);
+      color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌾</span>
+        <h1>কৃষি<span>সহায়তা</span></h1>
+      </a>
+      <div class="header-actions">
+        <button class="dark-toggle" id="darkToggle">
+          <i class="fas fa-moon"></i> <span>ডার্ক</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+      <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+      <a href="bazardor.html" class="active"><i class="fas fa-tags"></i><span data-i18n="nav_bazardor">বাজারদর</span></a>
+      <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+      <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+      <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+      <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>    <!-- নতুন -->
+      <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>                   <!-- নতুন -->
+      <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a> 
+      <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>                      <!-- নতুন -->
+      <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+      <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+      <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+      <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+      <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+      <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+      <a href="admin-reports.html">রিপোর্ট</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="container">
+
+    <div class="market-section">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
+        <h2 style="border:none; padding:0; margin:0;"><i class="fas fa-sack-dollar"></i> বাজারদর</h2>
+        <span class="live-badge"><span class="dot"></span> লাইভ</span>
+      </div>
+      <p style="color:var(--text-light); margin-bottom:20px;">
+        বিভিন্ন ফসলের বর্তমান বাজারদর, পরিবর্তন ও তুলনামূলক তথ্য দেখুন।
+      </p>
+
+      <!-- ===== সার্চ ===== -->
+      <input type="text" id="searchInput" class="search-box" placeholder="🔍 ফসল খুঁজুন (যেমন: ধান, টমেটো...)">
+
+      <!-- ===== মার্কেট গ্রিড ===== -->
+      <div class="market-grid" id="cropGrid">
+        <!-- JavaScript দিয়ে লোড হবে -->
+      </div>
+
+      <!-- ===== নো রেজাল্ট ===== -->
+      <div class="no-result" id="noResult">
+        <i class="fas fa-search"></i>
+        <p>🔍 "<span id="searchTerm"></span>" খুঁজে পাওয়া যায়নি</p>
+      </div>
+
+      <!-- ==========================================
+           অ্যাডমিন আপডেট সেকশন (শুধু অ্যাডমিন দেখবে)
+           ========================================== -->
+      <div class="admin-update-section" id="adminSection" style="display:none;">
+        <h4><i class="fas fa-edit"></i> বাজারদর আপডেট করুন (অ্যাডমিন)</h4>
+        <div class="form-row">
+          <select id="cropSelect">
+            <option value="ধান">ধান</option>
+            <option value="টমেটো">টমেটো</option>
+            <option value="পেঁয়াজ">পেঁয়াজ</option>
+            <option value="আলু">আলু</option>
+            <option value="কাঁচামরিচ">কাঁচামরিচ</option>
+            <option value="গম">গম</option>
+          </select>
+          <input type="number" id="priceInput" placeholder="দাম (টাকা)" />
+          <select id="changeSelect">
+            <option value="+%">▲ বেড়েছে</option>
+            <option value="-%">▼ কমেছে</option>
+            <option value="stable">― স্থিতিশীল</option>
+          </select>
+          <button class="btn-update" id="updateBtn"><i class="fas fa-save"></i> আপডেট</button>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;">
+        <a href="index.html" class="btn btn-primary">
+          <i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬৩৩৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="js/dark-mode.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/bazardor-live.js"></script>
+<script src="js/language.js"></script>
+
+</body>
+</html>

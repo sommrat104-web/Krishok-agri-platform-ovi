@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- ===== হোম ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- ===== ফসল ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/crops.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- ===== বাজারদর ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/bazardor.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- ===== যন্ত্রপাতি ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/equipment.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- ===== ভাড়া ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/rental.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- ===== বাজার (ই-কমার্স) ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/shop.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- ===== অর্ডার ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/order.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- ===== ক্যালেন্ডার ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/calendar.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- ===== রোগ শনাক্ত ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/disease-detection.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- ===== চ্যাটবট ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/chatbot.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- ===== ফোরাম ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/forum.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- ===== সম্পর্কে ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/about.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- ===== যোগাযোগ ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/contact.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- ===== লাইভ চ্যাট ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/chat.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- ===== প্রোফাইল ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/profile.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- ===== লগইন ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/login.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- ===== অ্যাডমিন ===== -->
+    <url>
+        <loc>https://Krishok-agri-platform-ovi.github.io/krisok-agri-platform/admin.html</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+</urlset>

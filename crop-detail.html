@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+  <!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+  <!-- ===== Google Analytics ===== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+<script src="js/analytics.js"></script>
+
+
+  <!-- ===== PWA ===== -->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+<meta name="theme-color" content="#1a5e2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  <title>ফসল ডিটেইলস - কৃষি সহায়তা</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- ===== হোমপেজের স্টাইল (একই) ===== -->
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #1a5e2a;
+      --primary-dark: #0f3d1a;
+      --primary-light: #2e8b57;
+      --secondary: #f5b042;
+      --bg: #f4f9f4;
+      --white: #ffffff;
+      --text-dark: #1a2a1f;
+      --text-light: #4a5a4f;
+      --shadow: 0 8px 30px rgba(0,40,20,0.08);
+      --shadow-hover: 0 16px 48px rgba(0,60,30,0.12);
+      --radius: 20px;
+      --radius-btn: 60px;
+      --transition: all 0.3s ease;
+      --max-width: 1200px;
+      --font: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+      min-height: 100vh;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 40px);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: var(--white);
+    }
+    .logo .logo-icon {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--secondary);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .logo span { color: var(--secondary); }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+
+    /* ===== DARK TOGGLE ===== */
+    .dark-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(4px);
+    }
+    .dark-toggle:hover {
+      background: rgba(255,255,255,0.15);
+      transform: scale(1.04);
+      border-color: var(--secondary);
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      background: var(--white);
+      padding: 10px 0;
+      border-bottom: 3px solid var(--secondary);
+      position: sticky;
+      top: 72px;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    .nav-inner {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      min-width: max-content;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      color: var(--text-light);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    nav a i { font-size: 1rem; }
+    nav a:hover { background: var(--bg); color: var(--primary); }
+    nav a.active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(26,94,42,0.25);
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 40px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 4px solid var(--secondary);
+    }
+    .section-title i { color: var(--secondary); font-size: 1.6rem; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 4px 16px rgba(26,94,42,0.3); }
+    .btn-primary:hover { background: var(--primary-dark); transform: scale(1.04); }
+    .btn-sm { padding: 8px 20px; font-size: 0.85rem; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary-dark);
+      color: #ccddcc;
+      padding: 40px 0 20px;
+      margin-top: 40px;
+      border-top: 5px solid var(--secondary);
+    }
+    .footer-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    footer h4 { color: var(--secondary); margin-bottom: 12px; font-size: 1.1rem; }
+    footer ul { list-style: none; }
+    footer ul li { padding: 4px 0; }
+    footer ul a { color: #b3d9b3; transition: var(--transition); }
+    footer ul a:hover { color: var(--secondary); }
+    footer .social {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    footer .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      color: #b3d9b3;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    footer .social a:hover {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      transform: scale(1.08);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 18px;
+      margin-top: 25px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ===== TOAST ===== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.5s ease;
+      pointer-events: none;
+      max-width: 90%;
+      text-align: center;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.success { background: var(--primary); }
+    .toast.error { background: #dc3545; }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+      --bg: #0d1f13;
+      --white: #1e3324;
+      --text-dark: #e0eee0;
+      --text-light: #b3d9b3;
+      --shadow: 0 8px 30px rgba(0,0,0,0.4);
+      --shadow-hover: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    body.dark .card,
+    body.dark .quick-card,
+    body.dark .feature-card { background: var(--white); }
+    body.dark nav { background: var(--white); }
+    body.dark nav a { color: var(--text-light); }
+    body.dark nav a.active { background: var(--primary); color: var(--white); }
+    body.dark .dark-toggle { border-color: rgba(255,255,255,0.15); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; align-items: stretch; text-align: center; }
+      .header-actions { justify-content: center; }
+      nav { top: 120px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .dark-toggle { padding: 6px 12px; font-size: 0.8rem; }
+    }
+
+    /* ===== ফসল ডিটেইলস পেজের অতিরিক্ত স্টাইল ===== */
+    .detail-hero {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: clamp(25px, 4vw, 40px);
+      border-radius: var(--radius);
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .detail-hero .emoji { font-size: clamp(3.5rem, 8vw, 5rem); }
+    .detail-hero .info { flex: 1; }
+    .detail-hero .info h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 4px; }
+    .detail-hero .info .sub { opacity: 0.85; font-size: 1.05rem; }
+    .detail-hero .info .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .detail-hero .info .tags .badge {
+      font-size: 0.8rem;
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    .detail-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 600px) {
+      .detail-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .detail-card {
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--secondary);
+      transition: var(--transition);
+    }
+    .detail-card:hover { transform: translateX(4px); box-shadow: var(--shadow-hover); }
+    .detail-card .label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .detail-card .value {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 2px;
+    }
+    .detail-card .value i { margin-right: 8px; color: var(--secondary); }
+
+    .detail-description {
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+    }
+    .detail-description h4 { color: var(--primary); margin-bottom: 6px; }
+    .detail-description p { color: var(--text-light); font-size: 1.05rem; line-height: 1.8; }
+
+    .detail-tips {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: var(--radius);
+      border-left: 5px solid var(--secondary);
+      margin-top: 20px;
+    }
+    .detail-tips h4 { color: var(--primary); margin-bottom: 4px; }
+    .detail-tips p { color: var(--text-light); font-size: 1rem; }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+      color: var(--primary);
+      padding: 10px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      margin-bottom: 20px;
+    }
+    .back-btn:hover { background: var(--primary); color: var(--white); transform: scale(1.04); }
+
+    .not-found {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .not-found i { font-size: 4rem; color: #ccc; display: block; margin-bottom: 12px; }
+    .not-found h2 { color: var(--text-light); margin-bottom: 8px; }
+    .not-found p { color: var(--gray); }
+
+    .related-section { margin-top: 30px; }
+    .related-section h4 { color: var(--primary); margin-bottom: 12px; }
+    .related-crops {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .related-crops .related-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      border: 2px solid var(--primary);
+      border-radius: 50px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .related-crops .related-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: scale(1.04);
+    }
+
+    /* ===== ডার্ক মোড ===== */
+    body.dark .detail-card,
+    body.dark .detail-description,
+    body.dark .detail-tips { background: var(--white); }
+    body.dark .detail-tips p { color: var(--text-light); }
+    body.dark .related-crops .related-btn {
+      border-color: var(--primary-light);
+      color: var(--text-light);
+    }
+    body.dark .related-crops .related-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+    body.dark .back-btn { background: var(--white); color: var(--text-light); }
+    body.dark .back-btn:hover { background: var(--primary); color: var(--white); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌾</span>
+        <h1>কৃষি<span>সহায়তা</span></h1>
+      </a>
+      <div class="header-actions">
+        <button class="dark-toggle" id="darkToggle">
+          <i class="fas fa-moon"></i> <span>ডার্ক</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+      <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+      <a href="crop-detail.html"><i class="fas fa-seedling"></i><span data-i18n="nav_crop-detail">ফসলের বিস্তারিত</span></a>
+      <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+      <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+      <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+      <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+      <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>    <!-- নতুন -->
+      <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>                   <!-- নতুন -->
+      <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a> 
+      <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>                      <!-- নতুন -->
+      <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+      <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+      <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+      <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+      <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+      <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+      <a href="admin-reports.html">রিপোর্ট</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="container">
+
+    <a href="crops.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> ফসলের তালিকায় ফিরে যান
+    </a>
+
+    <!-- ===== কন্টেন্ট এরিয়া ===== -->
+    <div id="detailContent">
+      <!-- JavaScript দিয়ে ডাইনামিকভাবে দেখানো হবে -->
+    </div>
+
+    <div style="margin-top:30px;">
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">টার্মস অ্যান্ড কন্ডিশন</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম | সব অধিকার সংরক্ষিত</p>
+      <p style="opacity:0.6; font-size:0.85rem; margin-top:4px;">
+        <i class="fas fa-code"></i> প্রযুক্তি সহায়তায় কৃষির উন্নয়ন
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/language.js"></script>
+<script>
+  (function() {
+    const loginNavBtn = document.getElementById('loginNavBtn');
+    const logoutNavBtn = document.getElementById('logoutNavBtn');
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        if (loginNavBtn) loginNavBtn.style.display = 'none';
+        if (logoutNavBtn) logoutNavBtn.style.display = 'inline-flex';
+      } else {
+        if (loginNavBtn) loginNavBtn.style.display = 'inline-flex';
+        if (logoutNavBtn) logoutNavBtn.style.display = 'none';
+      }
+    });
+
+    if (logoutNavBtn) {
+
+    logoutNavBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      firebase.auth().signOut().then(function() {
+        window.location.href = 'login.html';
+      });
+    });
+  }
+  })();
+</script>
+
+<!-- ===== SERVICE WORKER ===== -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js')
+        .then(function(registration) {
+          console.log('✅ Service Worker রেজিস্টার হয়েছে:', registration);
+        })
+        .catch(function(error) {
+          console.log('❌ Service Worker রেজিস্টার হয়নি:', error);
+        });
+    });
+  } else {
+    console.log('ℹ️ এই ব্রাউজার Service Worker সাপোর্ট করে না।');
+  }
+</script>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== DARK MODE =====
+  const toggleBtn = document.getElementById('darkToggle');
+  const body = document.body;
+
+  function toggleDark() {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    toggleBtn.innerHTML = isDark
+      ? '<i class="fas fa-sun"></i> <span>লাইট</span>'
+      : '<i class="fas fa-moon"></i> <span>ডার্ক</span>';
+  }
+
+  function loadDark() {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === 'enabled') {
+      body.classList.add('dark');
+      toggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>লাইট</span>';
+    }
+  }
+
+  toggleBtn.addEventListener('click', toggleDark);
+  document.addEventListener('DOMContentLoaded', loadDark);
+
+  // ===== TOAST =====
+  function showToast(msg, type) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.className = 'toast show ' + (type || 'success');
+    setTimeout(() => { t.className = 'toast'; }, 3500);
+  }
+  window.showToast = showToast;
+
+  // ============================================
+  // ফসল ডিটেইলস পেজের JavaScript
+  // ============================================
+
+  // ===== ফসল ডাটাবেস =====
+  var cropData = [
+    {
+      id: 1,
+      name: 'ধান',
+      emoji: '🌾',
+      category: 'ধান',
+      season: 'আমন/বোরো',
+      duration: '১৪০-১৫০ দিন',
+      plowing: '৩-৪ বার',
+      soil: 'এঁটেল-দোআঁশ',
+      water: 'প্রতি ৫-৭ দিন',
+      fertilizer: 'ইউরিয়া + টিএসপি + এমওপি',
+      pesticide: 'কার্বোফুরান (২০ কেজি/হেক্টর)',
+      disease: 'ব্লাস্ট, লিফ স্পট',
+      yield: '৪-৫ টন/হেক্টর',
+      price: '৩২-৩৫ টাকা/কেজি',
+      description: 'ধান বাংলাদেশের প্রধান খাদ্যশস্য। ব্রি-৪৯ উচ্চ ফলনশীল ও রোগ প্রতিরোধী জাত। এটি দেশের প্রায় ৮০% কৃষক চাষ করে থাকেন।',
+      tips: 'জমি ভালোভাবে তৈরি করুন, বীজ শোধন করুন, নির্দিষ্ট মাত্রায় সার প্রয়োগ করুন। সময়মতো সেচ দিন এবং আগাছা পরিষ্কার রাখুন।'
+    },
+    {
+      id: 2,
+      name: 'টমেটো',
+      emoji: '🍅',
+      category: 'শাকসবজি',
+      season: 'শীতকাল',
+      duration: '৭০-৮০ দিন',
+      plowing: '২-৩ বার',
+      soil: 'বেলে-দোআঁশ',
+      water: 'ড্রিপ ইরিগেশন',
+      fertilizer: 'জৈব সার + ডিএপি',
+      pesticide: 'কপার অক্সিক্লোরাইড',
+      disease: 'লেট ব্লাইট, উইল্ট',
+      yield: '২০-২৫ টন/হেক্টর',
+      price: '৮০-১০০ টাকা/কেজি',
+      description: 'টমেটো ভিটামিন সি এর ভালো উৎস। সালাদ ও রান্নায় ব্যবহৃত হয়। বাণিজ্যিকভাবে চাষের জন্য অত্যন্ত লাভজনক।',
+      tips: 'বাঁশের মাচা দিন, মরা পাতা ছাঁটাই করুন, নিয়মিত সেচ দিন। জমি থেকে পানি নিষ্কাশনের ব্যবস্থা রাখুন।'
+    },
+    {
+      id: 3,
+      name: 'গম',
+      emoji: '🌾',
+      category: 'ধান',
+      season: 'শীতকালীন',
+      duration: '১১০-১২০ দিন',
+      plowing: '৩ বার',
+      soil: 'দোআঁশ',
+      water: '৩-৪ বার',
+      fertilizer: 'ইউরিয়া ১২০ কেজি/হেক্টর',
+      pesticide: 'ইমিডাক্লোপ্রিড',
+      disease: 'রাস্ট, স্মাট',
+      yield: '৩-৪ টন/হেক্টর',
+      price: '৩৮-৪২ টাকা/কেজি',
+      description: 'গম রুটির প্রধান উপাদান। শীতকালে বেশি চাষ হয়। গমের আটা দিয়ে রুটি, পরোটা ও নানা খাবার তৈরি হয়।',
+      tips: 'ঠিক সময়ে বীজ বপন করুন, সেচ নিয়ন্ত্রণ করুন। অতিরিক্ত সেচ দিলে গমের ফলন কমে যায়।'
+    },
+    {
+      id: 4,
+      name: 'পেঁয়াজ',
+      emoji: '🧅',
+      category: 'মসলা',
+      season: 'শুষ্ক মৌসুম',
+      duration: '১৫০-১৭০ দিন',
+      plowing: '৪-৫ বার',
+      soil: 'বেলে-দোআঁশ',
+      water: '১০-১২ দিন অন্তর',
+      fertilizer: 'এমওপি ১৫০ কেজি/হেক্টর',
+      pesticide: 'ম্যালাথিয়ন',
+      disease: 'ডাউনি মিলডিউ, পচা',
+      yield: '১৫-২০ টন/হেক্টর',
+      price: '৫৫-৬৫ টাকা/কেজি',
+      description: 'পেঁয়াজ রান্নার অপরিহার্য উপাদান। সারাবছর চাহিদা থাকে। ভালোভাবে সংরক্ষণ করলে অনেকদিন রাখা যায়।',
+      tips: 'জমি শুকনা রাখুন, সময়মতো ফসল তুলুন। পেঁয়াজ যেন আর্দ্রতা না পায় সেদিকে খেয়াল রাখুন।'
+    },
+    {
+      id: 5,
+      name: 'কাঁচামরিচ',
+      emoji: '🌶️',
+      category: 'মসলা',
+      season: 'গ্রীষ্মকাল',
+      duration: '৬০-৭০ দিন',
+      plowing: '২-৩ বার',
+      soil: 'দোআঁশ',
+      water: 'প্রতিদিন (গ্রীষ্মে)',
+      fertilizer: 'ভার্মি কম্পোস্ট',
+      pesticide: 'নিম তেল',
+      disease: 'ফলের পচা, পাতার দাগ',
+      yield: '৮-১০ টন/হেক্টর',
+      price: '১২০-১৫০ টাকা/কেজি',
+      description: 'কাঁচামরিচ ঝালের জন্য বিখ্যাত। ভিটামিন সি সমৃদ্ধ। অত্যন্ত লাভজনক ফসল, তবে রোগবালাই বেশি হয়।',
+      tips: 'গাছের ডগা ছাঁটাই করুন, মাচা দিয়ে দিন। নিম তেল স্প্রে করলে পোকামাকড় থেকে বাঁচে।'
+    },
+    {
+      id: 6,
+      name: 'আলু',
+      emoji: '🥔',
+      category: 'শাকসবজি',
+      season: 'শীতকাল',
+      duration: '৮০-৯০ দিন',
+      plowing: '৩-৪ বার',
+      soil: 'বেলে-দোআঁশ',
+      water: '৭-১০ দিন অন্তর',
+      fertilizer: 'জৈব সার + ডিএপি + এমওপি',
+      pesticide: 'ম্যানকোজেব',
+      disease: 'লেট ব্লাইট, স্ক্যাব',
+      yield: '২৫-৩০ টন/হেক্টর',
+      price: '২৮-৩৫ টাকা/কেজি',
+      description: 'আলু বাংলাদেশের অন্যতম প্রধান সবজি। ভর্তা, ভাজি সহ নানা পদে ব্যবহৃত হয়। শীতকালে ব্যাপক চাষ হয়।',
+      tips: 'স্বাস্থ্যকর বীজ আলু ব্যবহার করুন, মাটি উঁচু করে চাষ করুন। রোগাক্রান্ত আলু ফেলে দিন।'
+    }
+  ];
+
+  // ===== অল ক্রপস (রিলেটেড এর জন্য) =====
+  var allCrops = cropData.map(function(c) {
+    return { id: c.id, name: c.name, emoji: c.emoji, category: c.category };
+  });
+
+  // ===== ID পাওয়া =====
+  function getCropId() {
+    var params = new URLSearchParams(window.location.search);
+    return params.get('id');
+  }
+
+  // ===== রেন্ডার =====
+  function renderDetail() {
+    var id = getCropId();
+    var container = document.getElementById('detailContent');
+
+    if (!container) {
+      console.error('❌ detailContent এলিমেন্ট পাওয়া যায়নি!');
+      return;
+    }
+
+    if (!id || !cropData[id - 1]) {
+      container.innerHTML = `
+        <div class="not-found">
+          <i class="fas fa-search"></i>
+          <h2>ফসল খুঁজে পাওয়া যায়নি</h2>
+          <p>আপনি যে ফসলটি খুঁজছেন তা আমাদের ডাটাবেসে নেই।</p>
+          <a href="crops.html" class="btn btn-primary" style="margin-top:16px;">
+            <i class="fas fa-arrow-left"></i> ফসলের তালিকায় ফিরে যান
+          </a>
+        </div>
+      `;
+      return;
+    }
+
+    var crop = cropData[id - 1];
+    var cropId = parseInt(id);
+
+    // ===== সম্পর্কিত ফসল =====
+    var relatedHtml = '';
+    var relatedCount = 0;
+    for (var i = 0; i < allCrops.length; i++) {
+      var c = allCrops[i];
+      if (c.id !== cropId && c.category === crop.category && relatedCount < 4) {
+        relatedHtml += '<a href="crop-detail.html?id=' + c.id + '" class="related-btn">' + c.emoji + ' ' + c.name + '</a>';
+        relatedCount++;
+      }
+    }
+    if (relatedHtml === '') {
+      relatedHtml = '<span style="color:var(--gray);">অন্যান্য ফসলের জন্য তালিকায় দেখুন</span>';
+    }
+
+    // ===== রেন্ডার =====
+    container.innerHTML = `
+      <div class="detail-hero">
+        <div class="emoji">${crop.emoji}</div>
+        <div class="info">
+          <h2>${crop.name}</h2>
+          <div class="sub">
+            <i class="fas fa-tag"></i> ${crop.category} &nbsp;|&nbsp; 
+            <i class="fas fa-calendar-alt"></i> ${crop.season}
+          </div>
+          <div class="tags">
+            <span class="badge"><i class="fas fa-clock"></i> ${crop.duration}</span>
+            <span class="badge"><i class="fas fa-tractor"></i> ${crop.plowing}</span>
+            <span class="badge"><i class="fas fa-taka-sign"></i> ${crop.price}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-description">
+        <h4><i class="fas fa-info-circle"></i> বিবরণ</h4>
+        <p>${crop.description}</p>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-seedling"></i> মাটির ধরন</div>
+          <div class="value">${crop.soil}</div>
+        </div>
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-tint"></i> সেচ</div>
+          <div class="value">${crop.water}</div>
+        </div>
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-flask"></i> সার</div>
+          <div class="value">${crop.fertilizer}</div>
+        </div>
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-bug"></i> কীটনাশক</div>
+          <div class="value">${crop.pesticide}</div>
+        </div>
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-heartbeat"></i> রোগবালাই</div>
+          <div class="value">${crop.disease}</div>
+        </div>
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-chart-line"></i> উৎপাদন</div>
+          <div class="value">${crop.yield}</div>
+        </div>
+      </div>
+
+      <div class="detail-tips">
+        <h4><i class="fas fa-lightbulb" style="color:#f5a623;"></i> বিশেষ টিপস</h4>
+        <p>${crop.tips}</p>
+      </div>
+
+      <div class="related-section">
+        <h4><i class="fas fa-link"></i> সম্পর্কিত ফসল</h4>
+        <div class="related-crops">
+          ${relatedHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  // ===== পেজ লোড হলে রেন্ডার =====
+  document.addEventListener('DOMContentLoaded', function() {
+    renderDetail();
+    console.log('✅ ফসল ডিটেইলস পেজ লোড হয়েছে!');
+  });
+
+  console.log('✅ কৃষি সহায়তা ফসল ডিটেইলস পেজ লোড হয়েছে!');
+</script>
+
+</body>
+</html>

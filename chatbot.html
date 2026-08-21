@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+  <!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+  <!-- ===== Google Analytics ===== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+<script src="js/analytics.js"></script>
+
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  <title>কৃষি চ্যাটবট - কৃষি সহায়তা</title>
+  
+  <!-- ===== ফন্ট ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- ===== আইকন ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .chatbot-container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 600px;
+      max-height: 80vh;
+    }
+    
+    /* ===== Header ===== */
+    .chatbot-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .chatbot-header .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+    .chatbot-header .info h3 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .chatbot-header .info p {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin: 0;
+    }
+    .chatbot-header .status {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+    }
+    .chatbot-header .status .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse-dot 1.5s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    /* ===== Messages ===== */
+    .chatbot-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 20px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .chatbot-messages .message {
+      max-width: 80%;
+      padding: 10px 16px;
+      border-radius: 16px;
+      animation: msgFadeIn 0.3s ease;
+    }
+    .chatbot-messages .message.bot {
+      align-self: flex-start;
+      background: var(--white);
+      color: var(--text-dark);
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .chatbot-messages .message.bot .time {
+      font-size: 0.65rem;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+    .chatbot-messages .message.user {
+      align-self: flex-end;
+      background: var(--primary);
+      color: var(--white);
+      border-bottom-right-radius: 4px;
+    }
+    .chatbot-messages .message.user .time {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+      text-align: right;
+    }
+    .chatbot-messages .message .msg-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+    .chatbot-messages .message .msg-text .highlight {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+    .chatbot-messages .typing-indicator {
+      align-self: flex-start;
+      background: var(--white);
+      padding: 10px 16px;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      display: none;
+      gap: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .chatbot-messages .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gray);
+      display: inline-block;
+      animation: typing 1.2s infinite;
+    }
+    .chatbot-messages .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .chatbot-messages .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-6px); }
+    }
+    @keyframes msgFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* ===== Input ===== */
+    .chatbot-input {
+      display: flex;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--white);
+      border-top: 1px solid #eef5ee;
+    }
+    .chatbot-input input {
+      flex: 1;
+      padding: 10px 16px;
+      border: 2px solid #d8e8d8;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transition);
+      background: var(--bg);
+      color: var(--text-dark);
+    }
+    .chatbot-input input:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 4px rgba(46,125,94,0.1);
+    }
+    .chatbot-input input::placeholder {
+      color: var(--gray);
+    }
+    .chatbot-input button {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chatbot-input button:hover {
+      background: var(--primary-dark);
+      transform: scale(1.04);
+    }
+    .chatbot-input button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    /* ===== Quick Replies ===== */
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px 16px 12px;
+      background: var(--white);
+      border-top: 1px solid #eef5ee;
+    }
+    .quick-replies .quick-btn {
+      padding: 6px 14px;
+      border: 2px solid var(--primary-light);
+      border-radius: 30px;
+      background: transparent;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .quick-replies .quick-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    /* ===== Dark Mode ===== */
+    body.dark .chatbot-container {
+      background: var(--white);
+    }
+    body.dark .chatbot-messages {
+      background: var(--bg);
+    }
+    body.dark .chatbot-messages .message.bot {
+      background: var(--white);
+      color: var(--text-dark);
+    }
+    body.dark .chatbot-input {
+      background: var(--white);
+      border-top-color: var(--dark-border);
+    }
+    body.dark .chatbot-input input {
+      background: var(--white);
+      border-color: var(--dark-border);
+      color: var(--text-dark);
+    }
+    body.dark .quick-replies {
+      background: var(--white);
+      border-top-color: var(--dark-border);
+    }
+    body.dark .quick-replies .quick-btn {
+      border-color: var(--primary-light);
+      color: var(--text-light);
+    }
+    body.dark .quick-replies .quick-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .chatbot-container {
+        height: 500px;
+        margin: 16px 0;
+      }
+      .chatbot-messages .message {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌾</span>
+        <h1>কৃষি<span>সহায়তা</span></h1>
+      </a>
+      <div class="header-actions">
+        <button class="dark-toggle" id="darkToggle">
+          <i class="fas fa-moon"></i> <span>ডার্ক</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+      <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+      <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+      <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+      <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+      <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+      <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>    <!-- নতুন -->
+      <a href="chatbot.html" class="active"><i class="fas fa-robot"></i><span data-i18n="nav_chatbot">চ্যাটবট</span></a>                   <!-- নতুন -->
+      <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a>
+      <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>                      <!-- নতুন -->
+      <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+      <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+      <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+      <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+      <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+      <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+      <a href="admin-reports.html">রিপোর্ট</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="container">
+
+    <div class="chatbot-container">
+      <!-- ===== Header ===== -->
+      <div class="chatbot-header">
+        <div class="avatar">🌾</div>
+        <div class="info">
+          <h3>কৃষি সহায়িকা</h3>
+          <p>কৃষি বিষয়ক প্রশ্নের উত্তর দেই</p>
+        </div>
+        <div class="status">
+          <span class="dot"></span>
+          <span>অনলাইন</span>
+        </div>
+      </div>
+
+      <!-- ===== Messages ===== -->
+      <div class="chatbot-messages" id="chatMessages">
+        <div class="message bot">
+          <div class="msg-text">
+            👋 আসসালামু আলাইকুম! আমি <span class="highlight">কৃষি সহায়িকা</span>।<br>
+            ফসল, সার, কীটনাশক, আবহাওয়া—যেকোনো কৃষি প্রশ্ন করুন।
+          </div>
+          <div class="time">এখন</div>
+        </div>
+      </div>
+
+      <!-- ===== Typing Indicator ===== -->
+      <div class="typing-indicator" id="typingIndicator">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- ===== Quick Replies ===== -->
+      <div class="quick-replies" id="quickReplies">
+        <button class="quick-btn" data-msg="ধান চাষের পদ্ধতি কী?">🌾 ধান চাষ</button>
+        <button class="quick-btn" data-msg="টমেটোর রোগ ও সমাধান কী?">🍅 টমেটোর রোগ</button>
+        <button class="quick-btn" data-msg="সার প্রয়োগের নিয়ম কী?">🧪 সার প্রয়োগ</button>
+        <button class="quick-btn" data-msg="আবহাওয়া কীভাবে চাষে প্রভাব ফেলে?">🌤️ আবহাওয়া</button>
+      </div>
+
+      <!-- ===== Input ===== -->
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="💬 আপনার প্রশ্ন লিখুন..." />
+        <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="disease-detection.html">রোগ শনাক্ত</a></li>
+          <li><a href="chatbot.html">কৃষি চ্যাটবট</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬৩৩৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script src="js/dark-mode.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/language.js"></script>
+
+</body>
+</html>

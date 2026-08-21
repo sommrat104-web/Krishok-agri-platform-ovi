@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+    <!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+    <!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+    <!-- ===== Google Analytics ===== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+<script src="js/analytics.js"></script>
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <title>অর্ডার - কৃষি সহায়তা</title>
+    
+    <!-- ===== ফন্ট ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- ===== আইকন ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+    
+    <style>
+        /* ===== অর্ডার কন্টেইনার ===== */
+        .order-container {
+            max-width: 900px;
+            margin: 30px auto;
+            display: grid;
+            gap: 30px;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 768px) {
+            .order-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        /* ===== অর্ডার ফর্ম ===== */
+        .order-form {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .order-form h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+        }
+        .order-form .form-group {
+            margin-bottom: 16px;
+        }
+        .order-form .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+        .order-form .form-group label i {
+            color: var(--primary-light);
+            margin-right: 6px;
+        }
+        .order-form .form-group input,
+        .order-form .form-group textarea,
+        .order-form .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #d8e8d8;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            background: var(--bg);
+            color: var(--text-dark);
+        }
+        .order-form .form-group input:focus,
+        .order-form .form-group textarea:focus,
+        .order-form .form-group select:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px rgba(46,125,94,0.1);
+        }
+        .order-form .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .order-form .btn-place-order {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .order-form .btn-place-order:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(30,77,43,0.3);
+        }
+        .order-form .btn-place-order:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* ===== অর্ডার সারাংশ ===== */
+        .order-summary {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 140px;
+        }
+        .order-summary h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+        }
+        .order-summary .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eef5ee;
+            font-size: 0.95rem;
+        }
+        .order-summary .summary-item:last-child {
+            border-bottom: none;
+        }
+        .order-summary .summary-item .name {
+            color: var(--text-dark);
+        }
+        .order-summary .summary-item .price {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .order-summary .summary-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            border-top: 2px solid var(--secondary);
+            margin-top: 8px;
+        }
+        .order-summary .empty-cart-msg {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--gray);
+        }
+        .order-summary .empty-cart-msg i {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        /* ===== অর্ডার কনফার্মেশন মডাল ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.show {
+            display: flex;
+        }
+        .modal-content {
+            background: var(--white);
+            max-width: 500px;
+            width: 100%;
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-content .success-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 12px;
+        }
+        .modal-content h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .modal-content p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        .modal-content .btn-modal {
+            padding: 10px 30px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .modal-content .btn-modal:hover {
+            background: var(--primary-dark);
+        }
+        
+        body.dark .order-form { background: var(--white); }
+        body.dark .order-summary { background: var(--white); }
+        body.dark .modal-content { background: var(--white); }
+        body.dark .order-form .form-group input,
+        body.dark .order-form .form-group textarea,
+        body.dark .order-form .form-group select {
+            background: var(--white);
+            border-color: var(--dark-border);
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌾</span>
+                <h1>কৃষি<span>সহায়তা</span></h1>
+            </a>
+            <div class="header-actions">
+                <button class="dark-toggle" id="darkToggle">
+                    <i class="fas fa-moon"></i> <span>ডার্ক</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <div class="container">
+        <div class="nav-inner">
+            <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+            <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+            <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+            <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+            <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+            <a href="order.html" class="active"><i class="fas fa-clipboard-list"></i><span data-i18n="nav_order">অর্ডার</span></a>
+            <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+            <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>
+            <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>
+            <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a>
+            <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+            <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+            <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+            <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+            <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+            <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+            <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+            <a href="admin-reports.html">রিপোর্ট</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+    <div class="container">
+        
+        <h2 class="section-title"><i class="fas fa-clipboard-list"></i> অর্ডার করুন</h2>
+        <p style="color:var(--text-light); margin-bottom:20px;">
+            আপনার অর্ডারের তথ্য দিন এবং অর্ডার সম্পন্ন করুন।
+        </p>
+        
+        <div class="order-container">
+            
+            <!-- ===== অর্ডার ফর্ম ===== -->
+            <div class="order-form">
+                <h3><i class="fas fa-user"></i> ডেলিভারি তথ্য</h3>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> সম্পূর্ণ নাম</label>
+                        <input type="text" id="fullName" placeholder="আপনার সম্পূর্ণ নাম" required />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> মোবাইল নম্বর</label>
+                        <input type="tel" id="phone" placeholder="০১XXXXXXXXX" required />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> ঠিকানা</label>
+                        <textarea id="address" placeholder="বিস্তারিত ঠিকানা" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-truck"></i> ডেলিভারি সময়</label>
+                        <select id="deliveryTime">
+                            <option value="সকাল (৮-১২টা)">সকাল (৮-১২টা)</option>
+                            <option value="দুপুর (১২-৪টা)">দুপুর (১২-৪টা)</option>
+                            <option value="সন্ধ্যা (৪-৮টা)">সন্ধ্যা (৪-৮টা)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-comment"></i> বিশেষ নির্দেশনা</label>
+                        <textarea id="instructions" placeholder="অতিরিক্ত কিছু জানাতে চাইলে লিখুন..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-place-order" id="placeOrderBtn">
+                        <i class="fas fa-check-circle"></i> অর্ডার সম্পন্ন করুন
+                    </button>
+                </form>
+            </div>
+            
+            <!-- ===== অর্ডার সারাংশ ===== -->
+            <div class="order-summary" id="orderSummary">
+                <h3><i class="fas fa-shopping-cart"></i> অর্ডার সারাংশ</h3>
+                <div id="summaryItems">
+                    <!-- JavaScript দিয়ে লোড হবে -->
+                </div>
+            </div>
+            
+        </div>
+        
+        <div style="margin:20px 0;">
+            <a href="shop.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> বাজারে ফিরে যান</a>
+        </div>
+        
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">টার্মস অ্যান্ড কন্ডিশন</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম | সব অধিকার সংরক্ষিত</p>
+      <p style="opacity:0.6; font-size:0.85rem; margin-top:4px;">
+        <i class="fas fa-code"></i> প্রযুক্তির সহায়তায় কৃষির উন্নয়ন
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<!-- ===== CONFIRMATION MODAL ===== -->
+<div class="modal-overlay" id="confirmationModal">
+    <div class="modal-content">
+        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>✅ অর্ডার সম্পন্ন!</h3>
+        <p>আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে।<br>আমরা শীঘ্রই আপনার সাথে যোগাযোগ করবো।</p>
+        <button class="btn-modal" id="modalContinueBtn"><i class="fas fa-store"></i> বাজারে যান</button>
+    </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="js/dark-mode.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/language.js"></script>
+<script src="js/order.js"></script>
+
+</body>
+</html>

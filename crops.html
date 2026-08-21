@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+  <!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+  <!-- ===== Google Analytics ===== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+<script src="js/analytics.js"></script>
+
+
+  <!-- ===== PWA ===== -->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+<meta name="theme-color" content="#1a5e2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  <title>ফসল - কৃষি সহায়তা</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    /* ==========================================
+       CSS VARIABLES (হোমপেজের মতো)
+       ========================================== */
+    :root {
+      --primary: #1a5e2a;
+      --primary-dark: #0f3d1a;
+      --primary-light: #2e8b57;
+      --secondary: #f5b042;
+      --secondary-light: #ffe08a;
+      --accent: #4a90d9;
+      --accent-light: #e8f0fe;
+      --success: #28a745;
+      --danger: #dc3545;
+      --warning: #ffc107;
+      --bg: #f4f9f4;
+      --white: #ffffff;
+      --text-dark: #1a2a1f;
+      --text-light: #4a5a4f;
+      --gray: #8a9a8f;
+      --shadow: 0 8px 30px rgba(0,40,20,0.08);
+      --shadow-hover: 0 16px 48px rgba(0,60,30,0.12);
+      --shadow-lg: 0 20px 60px rgba(0,40,20,0.12);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --radius-btn: 60px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      --max-width: 1200px;
+      --font: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+    }
+
+    /* ==========================================
+       RESET
+       ========================================== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+      min-height: 100vh;
+      transition: background 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 40px);
+    }
+
+    /* ==========================================
+       CUSTOM SCROLLBAR
+       ========================================== */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { 
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+    ::-webkit-scrollbar-thumb:hover { background: var(--primary-dark); }
+
+    /* ==========================================
+       SELECTION
+       ========================================== */
+    ::selection {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    /* ==========================================
+       HEADER
+       ========================================== */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      backdrop-filter: blur(10px);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: var(--white);
+      transition: var(--transition);
+    }
+    .logo:hover { transform: scale(1.02); }
+    .logo .logo-icon {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--secondary);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .logo span { color: var(--secondary); }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+
+    /* ===== DARK TOGGLE ===== */
+    .dark-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(4px);
+    }
+    .dark-toggle:hover {
+      background: rgba(255,255,255,0.15);
+      transform: scale(1.04);
+      border-color: var(--secondary);
+    }
+
+    /* ==========================================
+       NAVIGATION
+       ========================================== */
+    nav {
+      background: var(--white);
+      padding: 10px 0;
+      border-bottom: 3px solid var(--secondary);
+      position: sticky;
+      top: 72px;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    .nav-inner {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      min-width: max-content;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      color: var(--text-light);
+      transition: var(--transition);
+      white-space: nowrap;
+      position: relative;
+    }
+    nav a i { font-size: 1rem; }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+    nav a:hover::after { width: 60%; }
+    nav a:hover { background: var(--bg); color: var(--primary); }
+    nav a.active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(26,94,42,0.25);
+    }
+    nav a.active::after { display: none; }
+
+    /* ==========================================
+       SECTION TITLE
+       ========================================== */
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 40px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 4px solid var(--secondary);
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    .section-title i { color: var(--secondary); font-size: 1.6rem; }
+
+    /* ==========================================
+       BUTTONS
+       ========================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transition: var(--transition);
+      transform: translate(-50%, -50%);
+    }
+    .btn:active::after {
+      width: 300px;
+      height: 300px;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 4px 16px rgba(26,94,42,0.3); }
+    .btn-primary:hover { background: var(--primary-dark); transform: scale(1.04); box-shadow: 0 8px 30px rgba(26,94,42,0.4); }
+    .btn-secondary { background: var(--secondary); color: var(--text-dark); }
+    .btn-secondary:hover { background: var(--secondary-light); transform: scale(1.04); }
+    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+    .btn-outline:hover { background: var(--primary); color: var(--white); }
+    .btn-sm { padding: 8px 20px; font-size: 0.85rem; }
+    .btn-danger { background: var(--danger); color: var(--white); }
+    .btn-danger:hover { background: #c82333; transform: scale(1.04); }
+
+    /* ==========================================
+       BADGE
+       ========================================== */
+    .badge {
+      display: inline-block;
+      padding: 3px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-success { background: #d4edda; color: #155724; }
+    .badge-warning { background: #fff3cd; color: #856404; }
+    .badge-danger { background: #f8d7da; color: #721c24; }
+    .badge-info { background: #d1ecf1; color: #0c5460; }
+    .badge-primary { background: var(--primary); color: var(--white); }
+    .badge-secondary { background: var(--secondary); color: var(--text-dark); }
+
+    /* ==========================================
+       CARDS
+       ========================================== */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .card:hover::before { opacity: 1; }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    footer {
+      background: var(--primary-dark);
+      color: #ccddcc;
+      padding: 40px 0 20px;
+      margin-top: 40px;
+      border-top: 5px solid var(--secondary);
+    }
+    .footer-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    footer h4 { color: var(--secondary); margin-bottom: 12px; font-size: 1.1rem; }
+    footer ul { list-style: none; }
+    footer ul li { padding: 4px 0; }
+    footer ul a { color: #b3d9b3; transition: var(--transition); }
+    footer ul a:hover { color: var(--secondary); transform: translateX(4px); }
+    footer .social {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    footer .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      color: #b3d9b3;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    footer .social a:hover {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      transform: scale(1.08) rotate(8deg);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 18px;
+      margin-top: 25px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ==========================================
+       TOAST
+       ========================================== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.5s ease;
+      pointer-events: none;
+      max-width: 90%;
+      text-align: center;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.success { background: var(--primary); }
+    .toast.error { background: var(--danger); }
+
+    /* ==========================================
+       BACK TO TOP
+       ========================================== */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(26,94,42,0.3);
+      transition: var(--transition);
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+      z-index: 999;
+    }
+    .back-to-top.show { opacity: 1; transform: scale(1); pointer-events: auto; }
+    .back-to-top:hover { background: var(--secondary); color: var(--text-dark); transform: scale(1.1); }
+
+    /* ==========================================
+       DARK MODE
+       ========================================== */
+    body.dark {
+      --bg: #0d1f13;
+      --white: #1e3324;
+      --text-dark: #e0eee0;
+      --text-light: #b3d9b3;
+      --shadow: 0 8px 30px rgba(0,0,0,0.4);
+      --shadow-hover: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    body.dark .card,
+    body.dark .quick-card,
+    body.dark .feature-card { background: var(--white); }
+    body.dark nav { background: var(--white); }
+    body.dark nav a { color: var(--text-light); }
+    body.dark nav a.active { background: var(--primary); color: var(--white); }
+    body.dark .dark-toggle { border-color: rgba(255,255,255,0.15); }
+
+    /* ==========================================
+       RESPONSIVE
+       ========================================== */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; align-items: stretch; text-align: center; }
+      .header-actions { justify-content: center; }
+      nav { top: 120px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .dark-toggle { padding: 6px 12px; font-size: 0.8rem; }
+    }
+
+    /* ==========================================
+       ফসল পেজের অতিরিক্ত স্টাইল
+       ========================================== */
+    .search-box-wrapper {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .search-box-wrapper input {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 22px;
+      border: 2px solid #d8e8d8;
+      border-radius: 50px;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition);
+      background: var(--white);
+      color: var(--text-dark);
+    }
+    .search-box-wrapper input:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 4px rgba(46,125,94,0.15);
+    }
+    .search-box-wrapper select {
+      padding: 14px 22px;
+      border: 2px solid #d8e8d8;
+      border-radius: 50px;
+      font-size: 1rem;
+      outline: none;
+      background: var(--white);
+      cursor: pointer;
+      min-width: 180px;
+      color: var(--text-dark);
+    }
+    .crops-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 600px) { .crops-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 992px) { .crops-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .crop-card .crop-image { font-size: 3rem; text-align: center; padding: 10px 0 6px; }
+    .crop-card .crop-name { font-size: 1.2rem; color: var(--primary); text-align: center; margin-bottom: 4px; }
+    .crop-card .crop-district { font-size: 0.8rem; color: var(--gray); margin-bottom: 4px; }
+    .crop-card .crop-district i { color: var(--primary-light); margin-right: 4px; }
+    .crop-card .crop-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 6px 0 10px; }
+    .crop-card .crop-tags .tag { background: #e8f5e9; padding: 2px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: var(--primary); }
+    .crop-card .crop-info { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; font-size: 0.9rem; margin: 8px 0; }
+    .crop-card .crop-info .label { color: var(--gray); font-weight: 500; }
+    .crop-card .crop-info .value { font-weight: 600; color: var(--text-dark); }
+    .crop-card .crop-description { font-size: 0.9rem; color: var(--text-light); margin: 6px 0 10px; line-height: 1.5; }
+
+    .no-result { text-align: center; padding: 60px 20px; color: var(--gray); display: none; }
+    .no-result i { font-size: 3.5rem; color: #ccc; display: block; margin-bottom: 12px; }
+    .no-result h3 { font-size: 1.3rem; color: var(--text-light); margin-bottom: 4px; }
+
+    body.dark .crop-card .crop-tags .tag { background: #2a4a2f; color: #b3d9b3; }
+    body.dark .search-box-wrapper input,
+    body.dark .search-box-wrapper select { background: var(--white); border-color: var(--dark-border); color: var(--text-dark); }
+    body.dark .no-result i { color: #2a4a2f; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌾</span>
+        <h1>কৃষি<span>সহায়তা</span></h1>
+      </a>
+      <div class="header-actions">
+        <button class="dark-toggle" id="darkToggle">
+          <i class="fas fa-moon"></i> <span>ডার্ক</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+      <a href="crops.html" class="active"><i class="fas fa-seedling"></i><span data-i18n="nav_crops">ফসল</span></a>
+      <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+      <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+      <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+      <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+      <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>    <!-- নতুন -->
+      <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>                   <!-- নতুন -->
+      <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a>  
+      <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>                     <!-- নতুন -->
+      <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+      <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+      <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+      <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+      <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+      <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+      <a href="admin-reports.html">রিপোর্ট</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="container">
+
+    <h2 class="section-title"><i class="fas fa-seedling"></i> ফসলের তথ্য</h2>
+    <p style="color:var(--text-light); margin-bottom:20px;">
+      জেলা অনুযায়ী বিভিন্ন ফসলের বিস্তারিত তথ্য, চাষাবাদ পদ্ধতি ও সময়কাল সম্পর্কে জানুন।
+    </p>
+
+    <div class="search-box-wrapper">
+      <input type="text" id="searchInput" placeholder="🔍 ফসলের নাম লিখুন..." />
+      <select id="districtFilter">
+        <option value="all">সব জেলা</option>
+      </select>
+    </div>
+
+    <div class="crops-grid" id="cropGrid"></div>
+
+    <div class="no-result" id="noResult">
+      <i class="fas fa-search"></i>
+      <h3>🔍 "<span id="searchTerm"></span>" খুঁজে পাওয়া যায়নি</h3>
+    </div>
+
+    <div style="margin-top:30px;">
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">টার্মস অ্যান্ড কন্ডিশন</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম | সব অধিকার সংরক্ষিত</p>
+      <p style="opacity:0.6; font-size:0.85rem; margin-top:4px;">
+        <i class="fas fa-code"></i> প্রযুক্তি সহায়তায় কৃষির উন্নয়ন
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/language.js"></script>
+<script>
+  (function() {
+    const loginNavBtn = document.getElementById('loginNavBtn');
+    const logoutNavBtn = document.getElementById('logoutNavBtn');
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        if (loginNavBtn) loginNavBtn.style.display = 'none';
+        if (logoutNavBtn) logoutNavBtn.style.display = 'inline-flex';
+      } else {
+        if (loginNavBtn) loginNavBtn.style.display = 'inline-flex';
+        if (logoutNavBtn) logoutNavBtn.style.display = 'none';
+      }
+    });
+
+    if (logoutNavBtn) {
+
+    logoutNavBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      firebase.auth().signOut().then(function() {
+        window.location.href = 'login.html';
+      });
+    });
+  }
+  })();
+</script>
+
+<!-- ===== SERVICE WORKER ===== -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js')
+        .then(function(registration) {
+          console.log('✅ Service Worker রেজিস্টার হয়েছে:', registration);
+        })
+        .catch(function(error) {
+          console.log('❌ Service Worker রেজিস্টার হয়নি:', error);
+        });
+    });
+  } else {
+    console.log('ℹ️ এই ব্রাউজার Service Worker সাপোর্ট করে না।');
+  }
+</script>
+
+<!-- ==========================================
+     JAVASCRIPT
+     ========================================== -->
+<script>
+  // ===== DARK MODE =====
+  const toggleBtn = document.getElementById('darkToggle');
+  const body = document.body;
+
+  function toggleDark() {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    toggleBtn.innerHTML = isDark
+      ? '<i class="fas fa-sun"></i> <span>লাইট</span>'
+      : '<i class="fas fa-moon"></i> <span>ডার্ক</span>';
+  }
+
+  function loadDark() {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === 'enabled') {
+      body.classList.add('dark');
+      toggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>লাইট</span>';
+    }
+  }
+
+  toggleBtn.addEventListener('click', toggleDark);
+  document.addEventListener('DOMContentLoaded', loadDark);
+
+  // ===== TOAST =====
+  function showToast(msg, type) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.className = 'toast show ' + (type || 'success');
+    setTimeout(() => { t.className = 'toast'; }, 3500);
+  }
+  window.showToast = showToast;
+
+  // ===== BACK TO TOP =====
+  (function() {
+    const btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    btn.setAttribute('aria-label', 'শীর্ষে যান');
+    document.body.appendChild(btn);
+
+    let ticking = false;
+    function updateButton() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() { updateButton(); });
+        ticking = true;
+      }
+    });
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // ===== PAGE TRANSITION =====
+  (function() {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:var(--primary);z-index:99999;pointer-events:none;opacity:0;transition:opacity 0.5s ease;display:none;';
+    document.body.appendChild(overlay);
+
+    const spinner = document.createElement('div');
+    spinner.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:100000;opacity:0;transition:opacity 0.5s ease;pointer-events:none;display:none;';
+    spinner.innerHTML = '<div style="width:50px;height:50px;border:4px solid rgba(255,255,255,0.1);border-top:4px solid var(--secondary);border-radius:50%;animation:spin 0.8s linear infinite;"></div><style>@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style>';
+    document.body.appendChild(spinner);
+
+    window.addEventListener('load', function() {
+      spinner.style.opacity = '0';
+      overlay.style.opacity = '0';
+      setTimeout(function() {
+        overlay.style.display = 'none';
+        spinner.style.display = 'none';
+      }, 500);
+    });
+
+    document.querySelectorAll('nav a, .logo, .btn').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('http')) return;
+        const isInternal = href && !href.startsWith('#') && !href.startsWith('http') && href !== 'javascript:void(0)';
+        if (isInternal && !e.ctrlKey && !e.metaKey) {
+          e.preventDefault();
+          overlay.style.display = 'block';
+          spinner.style.display = 'block';
+          overlay.style.opacity = '0.6';
+          spinner.style.opacity = '1';
+          setTimeout(function() {
+            window.location.href = href;
+          }, 400);
+        }
+      });
+    });
+  })();
+
+  // ============================================
+  // ফসল ডাটাবেস
+  // ============================================
+  const cropData = [
+    { id: 1, name: 'ধান', emoji: '🌾', category: 'ধান', season: 'আমন/বোরো', duration: '১৪০-১৫০ দিন', plowing: '৩-৪ বার', price: '৩২-৩৫ টাকা', district: 'ঢাকা', description: 'ধান বাংলাদেশের প্রধান খাদ্যশস্য।' },
+    { id: 2, name: 'টমেটো', emoji: '🍅', category: 'শাকসবজি', season: 'শীতকাল', duration: '৭০-৮০ দিন', plowing: '২-৩ বার', price: '৮০-১০০ টাকা', district: 'ঢাকা', description: 'টমেটো ভিটামিন সি এর ভালো উৎস।' },
+    { id: 3, name: 'গম', emoji: '🌾', category: 'ধান', season: 'শীতকালীন', duration: '১১০-১২০ দিন', plowing: '৩ বার', price: '৩৮-৪২ টাকা', district: 'ঢাকা', description: 'গম রুটির প্রধান উপাদান।' },
+    { id: 4, name: 'আলু', emoji: '🥔', category: 'শাকসবজি', season: 'শীতকাল', duration: '৮০-৯০ দিন', plowing: '৩-৪ বার', price: '২৮-৩৫ টাকা', district: 'চট্টগ্রাম', description: 'আলু বাংলাদেশের অন্যতম প্রধান সবজি।' },
+    { id: 5, name: 'কাঁচামরিচ', emoji: '🌶️', category: 'মসলা', season: 'গ্রীষ্মকাল', duration: '৬০-৭০ দিন', plowing: '২-৩ বার', price: '১২০-১৫০ টাকা', district: 'চট্টগ্রাম', description: 'কাঁচামরিচ ঝালের জন্য বিখ্যাত।' },
+    { id: 6, name: 'পেঁয়াজ', emoji: '🧅', category: 'মসলা', season: 'শুষ্ক মৌসুম', duration: '১৫০-১৭০ দিন', plowing: '৪-৫ বার', price: '৫৫-৬৫ টাকা', district: 'রাজশাহী', description: 'পেঁয়াজ রান্নার অপরিহার্য উপাদান।' },
+    { id: 7, name: 'গম', emoji: '🌾', category: 'ধান', season: 'শীতকালীন', duration: '১১০-১২০ দিন', plowing: '৩ বার', price: '৩৮-৪২ টাকা', district: 'রাজশাহী', description: 'রাজশাহীর গম অত্যন্ত উন্নত মানের।' },
+    { id: 8, name: 'ধান', emoji: '🌾', category: 'ধান', season: 'আমন/বোরো', duration: '১৪০-১৫০ দিন', plowing: '৩-৪ বার', price: '৩২-৩৫ টাকা', district: 'খুলনা', description: 'খুলনার ধান অত্যন্ত উন্নত মানের।' },
+    { id: 9, name: 'টমেটো', emoji: '🍅', category: 'শাকসবজি', season: 'শীতকাল', duration: '৭০-৮০ দিন', plowing: '২-৩ বার', price: '৮০-১০০ টাকা', district: 'খুলনা', description: 'খুলনার টমেটো বিখ্যাত।' },
+    { id: 10, name: 'কাঁচামরিচ', emoji: '🌶️', category: 'মসলা', season: 'গ্রীষ্মকাল', duration: '৬০-৭০ দিন', plowing: '২-৩ বার', price: '১২০-১৫০ টাকা', district: 'বরিশাল', description: 'বরিশালের কাঁচামরিচ অত্যন্ত ঝাল।' },
+    { id: 11, name: 'চা', emoji: '🍃', category: 'শাকসবজি', season: 'সারা বছর', duration: 'সারা বছর', plowing: 'প্রয়োজন নেই', price: '৩০০-৫০০ টাকা', district: 'সিলেট', description: 'সিলেটের চা বিশ্ববিখ্যাত।' },
+    { id: 12, name: 'আলু', emoji: '🥔', category: 'শাকসবজি', season: 'শীতকাল', duration: '৮০-৯০ দিন', plowing: '৩-৪ বার', price: '২৮-৩৫ টাকা', district: 'রংপুর', description: 'রংপুরের আলু অত্যন্ত উন্নত মানের।' },
+    { id: 13, name: 'ধান', emoji: '🌾', category: 'ধান', season: 'আমন/বোরো', duration: '১৪০-১৫০ দিন', plowing: '৩-৪ বার', price: '৩২-৩৫ টাকা', district: 'ময়মনসিংহ', description: 'ময়মনসিংহের ধান অত্যন্ত উন্নত।' },
+    { id: 14, name: 'পেঁয়াজ', emoji: '🧅', category: 'মসলা', season: 'শুষ্ক মৌসুম', duration: '১৫০-১৭০ দিন', plowing: '৪-৫ বার', price: '৫৫-৬৫ টাকা', district: 'যশোর', description: 'যশোরের পেঁয়াজ অত্যন্ত উন্নত মানের।' },
+    { id: 15, name: 'আলু', emoji: '🥔', category: 'শাকসবজি', season: 'শীতকাল', duration: '৮০-৯০ দিন', plowing: '৩-৪ বার', price: '২৮-৩৫ টাকা', district: 'বগুড়া', description: 'বগুড়ার আলু বিখ্যাত।' },
+    { id: 16, name: 'ধান', emoji: '🌾', category: 'ধান', season: 'আমন/বোরো', duration: '১৪০-১৫০ দিন', plowing: '৩-৪ বার', price: '৩২-৩৫ টাকা', district: 'কুমিল্লা', description: 'কুমিল্লার ধান অত্যন্ত উন্নত।' },
+    { id: 17, name: 'টমেটো', emoji: '🍅', category: 'শাকসবজি', season: 'শীতকাল', duration: '৭০-৮০ দিন', plowing: '২-৩ বার', price: '৮০-১০০ টাকা', district: 'নরসিংদী', description: 'নরসিংদীর টমেটো বিখ্যাত।' },
+    { id: 18, name: 'গম', emoji: '🌾', category: 'ধান', season: 'শীতকালীন', duration: '১১০-১২০ দিন', plowing: '৩ বার', price: '৩৮-৪২ টাকা', district: 'পাবনা', description: 'পাবনার গম অত্যন্ত উন্নত মানের।' },
+    { id: 19, name: 'কাঁচামরিচ', emoji: '🌶️', category: 'মসলা', season: 'গ্রীষ্মকাল', duration: '৬০-৭০ দিন', plowing: '২-৩ বার', price: '১২০-১৫০ টাকা', district: 'কুষ্টিয়া', description: 'কুষ্টিয়ার কাঁচামরিচ বিখ্যাত।' },
+    { id: 20, name: 'ধান', emoji: '🌾', category: 'ধান', season: 'আমন/বোরো', duration: '১৪০-১৫০ দিন', plowing: '৩-৪ বার', price: '৩২-৩৫ টাকা', district: 'নওগাঁ', description: 'নওগাঁর ধান অত্যন্ত উন্নত।' }
+  ];
+
+  // ============================================
+  // ৬৪ জেলার তালিকা
+  // ============================================
+  const districts = [
+    'ঢাকা', 'ফরিদপুর', 'গাজীপুর', 'গোপালগঞ্জ', 'কিশোরগঞ্জ', 'মাদারীপুর', 'মানিকগঞ্জ', 'মুন্সীগঞ্জ',
+    'নারায়ণগঞ্জ', 'নরসিংদী', 'রাজবাড়ী', 'শরীয়তপুর', 'টাঙ্গাইল',
+    'চট্টগ্রাম', 'বান্দরবান', 'ব্রাহ্মণবাড়িয়া', 'কক্সবাজার', 'কুমিল্লা', 'ফেনী', 'খাগড়াছড়ি',
+    'লক্ষ্মীপুর', 'নোয়াখালী', 'রাঙ্গামাটি',
+    'রাজশাহী', 'বগুড়া', 'চাঁপাইনবাবগঞ্জ', 'জয়পুরহাট', 'নওগাঁ', 'নাটোর', 'পাবনা', 'সিরাজগঞ্জ',
+    'খুলনা', 'বাগেরহাট', 'চুয়াডাঙ্গা', 'যশোর', 'ঝিনাইদহ', 'কুষ্টিয়া', 'মাগুরা', 'মেহেরপুর',
+    'নড়াইল', 'সাতক্ষীরা',
+    'বরিশাল', 'বরগুনা', 'ভোলা', 'ঝালকাঠি', 'পটুয়াখালী', 'পিরোজপুর',
+    'সিলেট', 'হবিগঞ্জ', 'মৌলভীবাজার', 'সুনামগঞ্জ',
+    'রংপুর', 'দিনাজপুর', 'গাইবান্ধা', 'কুড়িগ্রাম', 'লালমনিরহাট', 'নীলফামারী', 'পঞ্চগড়', 'ঠাকুরগাঁও',
+    'ময়মনসিংহ', 'জামালপুর', 'নেত্রকোণা', 'শেরপুর'
+  ];
+
+  // ============================================
+  // DOM
+  // ============================================
+  const cropGrid = document.getElementById('cropGrid');
+  const searchInput = document.getElementById('searchInput');
+  const districtFilter = document.getElementById('districtFilter');
+  const noResult = document.getElementById('noResult');
+  const searchTerm = document.getElementById('searchTerm');
+
+  // ===== জেলা লোড =====
+  function loadDistricts() {
+    if (!districtFilter) return;
+    for (let i = 0; i < districts.length; i++) {
+      const opt = document.createElement('option');
+      opt.value = districts[i];
+      opt.textContent = districts[i];
+      districtFilter.appendChild(opt);
+    }
+  }
+  loadDistricts();
+
+  // ===== ফসল রেন্ডার =====
+  function renderCrops(crops) {
+    if (!cropGrid) return;
+    if (crops.length === 0) {
+      cropGrid.innerHTML = '';
+      if (noResult) noResult.style.display = 'block';
+      return;
+    }
+    if (noResult) noResult.style.display = 'none';
+
+    let html = '';
+    for (let i = 0; i < crops.length; i++) {
+      const crop = crops[i];
+      html += `
+        <div class="card crop-card">
+          <div class="crop-image">${crop.emoji}</div>
+          <h3 class="crop-name">${crop.name}</h3>
+          <div class="crop-district"><i class="fas fa-map-marker-alt"></i> ${crop.district}</div>
+          <div class="crop-tags">
+            <span class="tag"><i class="fas fa-tag"></i> ${crop.category}</span>
+            <span class="tag"><i class="fas fa-calendar-alt"></i> ${crop.season}</span>
+          </div>
+          <div class="crop-info">
+            <span class="label">চাষের সময়:</span>
+            <span class="value">${crop.duration}</span>
+            <span class="label">চাষের সংখ্যা:</span>
+            <span class="value">${crop.plowing}</span>
+            <span class="label">দাম (প্রতি কেজি):</span>
+            <span class="value">${crop.price}</span>
+          </div>
+          <p class="crop-description">${crop.description}</p>
+          <div style="margin-top: auto; padding-top: 12px;">
+            <a href="crop-detail.html?id=${crop.id}" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> বিস্তারিত
+            </a>
+          </div>
+        </div>
+      `;
+    }
+    cropGrid.innerHTML = html;
+  }
+
+  // ===== ফিল্টার =====
+  function filterCrops() {
+    if (!searchInput || !districtFilter) return;
+
+    const query = searchInput.value.toLowerCase().trim();
+    const district = districtFilter.value;
+
+    let filtered = cropData;
+
+    if (query !== '') {
+      filtered = [];
+      for (let i = 0; i < cropData.length; i++) {
+        const crop = cropData[i];
+        if (crop.name.toLowerCase().indexOf(query) !== -1 || 
+            crop.category.indexOf(query) !== -1 ||
+            crop.description.indexOf(query) !== -1 ||
+            crop.district.indexOf(query) !== -1) {
+          filtered.push(crop);
+        }
+      }
+    }
+
+    if (district !== 'all') {
+      const districtFiltered = [];
+      for (let j = 0; j < filtered.length; j++) {
+        if (filtered[j].district === district) {
+          districtFiltered.push(filtered[j]);
+        }
+      }
+      filtered = districtFiltered;
+    }
+
+    if (filtered.length === 0) {
+      if (searchTerm) searchTerm.textContent = query || district;
+      if (noResult) noResult.style.display = 'block';
+      if (cropGrid) cropGrid.innerHTML = '';
+    } else {
+      if (noResult) noResult.style.display = 'none';
+      renderCrops(filtered);
+    }
+  }
+
+  // ===== ইভেন্ট =====
+  if (searchInput) {
+    searchInput.addEventListener('keyup', filterCrops);
+    searchInput.addEventListener('search', function() {
+      if (this.value === '') filterCrops();
+    });
+  }
+
+  if (districtFilter) {
+    districtFilter.addEventListener('change', filterCrops);
+  }
+
+  // ===== ইনিশিয়াল =====
+  document.addEventListener('DOMContentLoaded', function() {
+    renderCrops(cropData);
+    console.log('✅ ফসল পেজ লোড হয়েছে!');
+    console.log('🌾 মোট ফসল:', cropData.length);
+    console.log('🗺️ মোট জেলা:', districts.length);
+  });
+</script>
+
+</body>
+</html>

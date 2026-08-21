@@ -1,0 +1,173 @@
+/**
+ * ============================================
+ * ই-কমার্স পেজ - CSS
+ * ফাইল: css/shop.css
+ * ============================================
+ */
+
+/* ===== শপ কন্টেইনার ===== */
+.shop-container {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* ===== ফিল্টার বার ===== */
+.filter-bar {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+.filter-bar select,
+.filter-bar input {
+    padding: 10px 16px;
+    border: 2px solid #d8e8d8;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    background: var(--bg);
+    color: var(--text-dark);
+    flex: 1;
+    min-width: 140px;
+}
+.filter-bar select:focus,
+.filter-bar input:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(46,125,94,0.1);
+}
+.filter-bar .cart-btn {
+    padding: 10px 24px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+.filter-bar .cart-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.04);
+}
+.filter-bar .cart-btn .badge {
+    background: var(--secondary);
+    color: var(--text-dark);
+    padding: 2px 10px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+}
+
+/* ===== পণ্য গ্রিড ===== */
+.product-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 600px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+.product-card .product-image {
+    width: 100%;
+    height: 200px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+.product-card .product-body {
+    padding: 20px;
+}
+.product-card .product-body .product-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+.product-card .product-body .product-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+.product-card .product-body .product-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+.product-card .product-body .product-price i {
+    font-size: 1rem;
+}
+.product-card .product-body .product-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 8px 0;
+}
+.product-card .product-body .product-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+.product-card .product-body .product-actions .btn-add {
+    flex: 1;
+    padding: 10px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.product-card .product-body .product-actions .btn-add:hover {
+    background: var(--primary-dark);
+}
+.product-card .product-body .product-actions .btn-add.added {
+    background: var(--success);
+}
+
+/* ===== নো রেজাল্ট ===== */
+.no-products {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray);
+}
+.no-products i {
+    font-size: 3rem;
+    color: #ccc;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ===== ডার্ক মোড ===== */
+body.dark .filter-bar { background: var(--white); }
+body.dark .product-card { background: var(--white); }
+body.dark .filter-bar select,
+body.dark .filter-bar input { background: var(--white); border-color: var(--dark-border); color: var(--text-dark); }

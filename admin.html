@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+<!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <title>অ্যাডমিন প্যানেল - কৃষি সহায়তা</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <style>
+        .admin-container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 24px;
+            min-height: 70vh;
+            margin: 30px 0;
+        }
+        @media (max-width: 768px) {
+            .admin-container { grid-template-columns: 1fr; }
+        }
+
+        .admin-sidebar {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 140px;
+        }
+        @media (max-width: 768px) {
+            .admin-sidebar { position: static; }
+        }
+        .admin-sidebar .admin-avatar {
+            text-align: center;
+            padding: 16px 0;
+            border-bottom: 2px solid #eef5ee;
+        }
+        .admin-sidebar .admin-avatar .avatar { font-size: 3.5rem; }
+        .admin-sidebar .admin-avatar h4 { color: var(--primary); margin: 4px 0; }
+        .admin-sidebar .admin-avatar .role { font-size: 0.85rem; color: var(--gray); }
+
+        .admin-sidebar .nav-list {
+            list-style: none;
+            padding: 12px 0;
+        }
+        .admin-sidebar .nav-list li {
+            padding: 10px 14px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .admin-sidebar .nav-list li:hover {
+            background: var(--bg);
+            color: var(--primary);
+        }
+        .admin-sidebar .nav-list li.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .admin-sidebar .nav-list li i { width: 20px; text-align: center; }
+
+        .admin-content {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+        .admin-content .page-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: var(--bg);
+            padding: 16px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+        .stat-card .number { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+        .stat-card .label { font-size: 0.85rem; color: var(--gray); }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .admin-table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .admin-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eef5ee;
+        }
+        .admin-table .actions {
+            display: flex;
+            gap: 6px;
+        }
+        .admin-table .actions button {
+            padding: 4px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+        .admin-table .actions .edit-btn {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .admin-table .actions .edit-btn:hover { background: #ffe08a; }
+        .admin-table .actions .delete-btn {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .admin-table .actions .delete-btn:hover { background: #f5c6cb; }
+
+        .admin-form .form-group { margin-bottom: 16px; }
+        .admin-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text-dark);
+        }
+        .admin-form input,
+        .admin-form select,
+        .admin-form textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #d8e8d8;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            background: var(--white);
+            color: var(--text-dark);
+        }
+        .admin-form input:focus,
+        .admin-form select:focus,
+        .admin-form textarea:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px rgba(46, 125, 94, 0.15);
+        }
+        .admin-form .submit-btn {
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        .admin-form .submit-btn:hover {
+            background: var(--secondary);
+            color: var(--text-dark);
+        }
+
+        body.dark .admin-sidebar,
+        body.dark .admin-content,
+        body.dark .stat-card { background: var(--white); }
+        body.dark .admin-sidebar .nav-list li:hover { background: var(--bg); color: var(--secondary); }
+        body.dark .admin-table td { border-color: var(--dark-border); }
+        body.dark .admin-table tr:hover td { background: var(--bg); }
+        body.dark .admin-form input,
+        body.dark .admin-form select,
+        body.dark .admin-form textarea {
+            background: var(--white);
+            border-color: var(--dark-border);
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌾</span>
+                <h1>কৃষি<span>সহায়তা</span></h1>
+            </a>
+            <div class="header-actions">
+                <button class="dark-toggle" id="darkToggle">
+                    <i class="fas fa-moon"></i> <span>ডার্ক</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="active"><i class="fas fa-home"></i> হোম</a>
+      <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+      <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+      <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+      <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+      <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+      <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>    <!-- নতুন -->
+      <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>                   <!-- নতুন -->
+      <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a> 
+      <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>                      <!-- নতুন -->
+      <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+      <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+      <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+      <a href="admin.html"><i class="fas fa-user-shield"></i><span data-i18n="nav_admin">অ্যাডমিন</span></a>
+      <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+      <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+      <a href="admin-reports.html">রিপোর্ট</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+    <div class="container">
+        <div class="admin-container">
+            <!-- ===== SIDEBAR ===== -->
+            <aside class="admin-sidebar">
+                <div class="admin-avatar">
+                    <div class="avatar">👨‍🌾</div>
+                    <h4>মিঃ অভি সম্রাট</h4>
+                    <div class="role">সুপার অ্যাডমিন</div>
+                </div>
+                <ul class="nav-list">
+                    <li class="active" data-page="dashboard"><i class="fas fa-chart-pie"></i> ড্যাশবোর্ড</li>
+                    <li data-page="users"><i class="fas fa-users"></i> ইউজার</li>
+                    <li data-page="orders"><i class="fas fa-shopping-cart"></i> অর্ডার</li>
+                    <li data-page="crops"><i class="fas fa-seedling"></i> ফসল</li>
+                    <li data-page="market"><i class="fas fa-tags"></i> বাজারদর</li>
+                    <li data-page="equipment"><i class="fas fa-tractor"></i> যন্ত্রপাতি</li>
+                    <li data-page="settings"><i class="fas fa-cog"></i> সেটিংস</li>
+                </ul>
+            </aside>
+
+            <!-- ===== CONTENT ===== -->
+            <div class="admin-content" id="adminContent">
+                <!-- JavaScript দিয়ে লোড হবে -->
+            </div>
+        </div>
+
+        <div style="margin:20px 0;">
+            <a href="index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান</a>
+        </div>
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">টার্মস অ্যান্ড কন্ডিশন</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম | সব অধিকার সংরক্ষিত</p>
+      <p style="opacity:0.6; font-size:0.85rem; margin-top:4px;">
+        <i class="fas fa-code"></i> প্রযুক্তির সহায়তায় কৃষির উন্নয়ন
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="js/dark-mode.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/language.js"></script>
+
+</body>
+</html>

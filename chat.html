@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+  <!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />s
+
+
+  <!-- ===== Google Analytics ===== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+<script src="js/analytics.js"></script>
+
+
+  <!-- ===== PWA ===== -->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+<meta name="theme-color" content="#1a5e2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  <title>লাইভ চ্যাট - কৃষি সহায়তা</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- ===== হোমপেজের স্টাইল (একই) ===== -->
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #1a5e2a;
+      --primary-dark: #0f3d1a;
+      --primary-light: #2e8b57;
+      --secondary: #f5b042;
+      --bg: #f4f9f4;
+      --white: #ffffff;
+      --text-dark: #1a2a1f;
+      --text-light: #4a5a4f;
+      --shadow: 0 8px 30px rgba(0,40,20,0.08);
+      --shadow-hover: 0 16px 48px rgba(0,60,30,0.12);
+      --radius: 20px;
+      --radius-btn: 60px;
+      --transition: all 0.3s ease;
+      --max-width: 1200px;
+      --font: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+      min-height: 100vh;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 40px);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: var(--white);
+    }
+    .logo .logo-icon {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--secondary);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .logo span { color: var(--secondary); }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+
+    /* ===== DARK TOGGLE ===== */
+    .dark-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(4px);
+    }
+    .dark-toggle:hover {
+      background: rgba(255,255,255,0.15);
+      transform: scale(1.04);
+      border-color: var(--secondary);
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      background: var(--white);
+      padding: 10px 0;
+      border-bottom: 3px solid var(--secondary);
+      position: sticky;
+      top: 72px;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    .nav-inner {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      min-width: max-content;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      color: var(--text-light);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    nav a i { font-size: 1rem; }
+    nav a:hover { background: var(--bg); color: var(--primary); }
+    nav a.active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(26,94,42,0.25);
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 40px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 4px solid var(--secondary);
+    }
+    .section-title i { color: var(--secondary); font-size: 1.6rem; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 4px 16px rgba(26,94,42,0.3); }
+    .btn-primary:hover { background: var(--primary-dark); transform: scale(1.04); }
+    .btn-sm { padding: 8px 20px; font-size: 0.85rem; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary-dark);
+      color: #ccddcc;
+      padding: 40px 0 20px;
+      margin-top: 40px;
+      border-top: 5px solid var(--secondary);
+    }
+    .footer-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    footer h4 { color: var(--secondary); margin-bottom: 12px; font-size: 1.1rem; }
+    footer ul { list-style: none; }
+    footer ul li { padding: 4px 0; }
+    footer ul a { color: #b3d9b3; transition: var(--transition); }
+    footer ul a:hover { color: var(--secondary); }
+    footer .social {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    footer .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      color: #b3d9b3;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    footer .social a:hover {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      transform: scale(1.08);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 18px;
+      margin-top: 25px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ===== TOAST ===== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.5s ease;
+      pointer-events: none;
+      max-width: 90%;
+      text-align: center;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.success { background: var(--primary); }
+    .toast.error { background: #dc3545; }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+      --bg: #0d1f13;
+      --white: #1e3324;
+      --text-dark: #e0eee0;
+      --text-light: #b3d9b3;
+      --shadow: 0 8px 30px rgba(0,0,0,0.4);
+      --shadow-hover: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    body.dark .card,
+    body.dark .quick-card,
+    body.dark .feature-card { background: var(--white); }
+    body.dark nav { background: var(--white); }
+    body.dark nav a { color: var(--text-light); }
+    body.dark nav a.active { background: var(--primary); color: var(--white); }
+    body.dark .dark-toggle { border-color: rgba(255,255,255,0.15); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; align-items: stretch; text-align: center; }
+      .header-actions { justify-content: center; }
+      nav { top: 120px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .dark-toggle { padding: 6px 12px; font-size: 0.8rem; }
+    }
+
+    /* ===== চ্যাট পেজের অতিরিক্ত স্টাইল ===== */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      max-height: 70vh;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      background: var(--bg);
+    }
+    .chat-messages .message {
+      margin-bottom: 12px;
+      animation: fadeIn 0.3s ease;
+    }
+    .chat-messages .message .sender {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+    .chat-messages .message .time {
+      font-size: 0.7rem;
+      color: var(--gray);
+      margin-left: 8px;
+    }
+    .chat-messages .message .text {
+      background: var(--white);
+      padding: 8px 16px;
+      border-radius: 12px;
+      display: inline-block;
+      max-width: 80%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      word-wrap: break-word;
+    }
+    .chat-messages .message.mine .text {
+      background: var(--primary);
+      color: white;
+    }
+    .chat-messages .message.mine {
+      text-align: right;
+    }
+    .chat-messages .message.mine .sender {
+      color: var(--primary-light);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-input-area {
+      display: flex;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--white);
+      border-top: 1px solid #eef5ee;
+    }
+    .chat-input-area input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 2px solid #d8e8d8;
+      border-radius: 30px;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition);
+      background: var(--bg);
+      color: var(--text-dark);
+    }
+    .chat-input-area input:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 4px rgba(46, 125, 94, 0.15);
+    }
+    .chat-input-area button {
+      padding: 12px 24px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .chat-input-area button:hover {
+      background: var(--secondary);
+      color: var(--text-dark);
+    }
+
+    .chat-user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .chat-user-info input {
+      flex: 1;
+      min-width: 150px;
+      padding: 8px 14px;
+      border: 2px solid #d8e8d8;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      outline: none;
+      background: var(--white);
+      color: var(--text-dark);
+    }
+    .chat-user-info .room-selector {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chat-user-info .room-selector button {
+      padding: 6px 16px;
+      border: 2px solid #d8e8d8;
+      border-radius: 30px;
+      background: var(--white);
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+    .chat-user-info .room-selector button.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .chat-user-info .room-selector button:hover {
+      background: var(--bg);
+    }
+
+    .online-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #d4edda;
+      color: #155724;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .online-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: #28a745;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ===== ডার্ক মোড ===== */
+    body.dark .chat-container { background: var(--white); }
+    body.dark .chat-messages { background: var(--bg); }
+    body.dark .chat-messages .message .text { background: var(--white); color: var(--text-dark); }
+    body.dark .chat-messages .message.mine .text { background: var(--primary); color: white; }
+    body.dark .chat-input-area { background: var(--white); border-top-color: var(--dark-border); }
+    body.dark .chat-input-area input { background: var(--white); border-color: var(--dark-border); color: var(--text-dark); }
+    body.dark .chat-user-info input { background: var(--white); border-color: var(--dark-border); color: var(--text-dark); }
+    body.dark .chat-user-info .room-selector button { background: var(--white); border-color: var(--dark-border); color: var(--text-dark); }
+    body.dark .chat-user-info .room-selector button.active { background: var(--primary); color: white; border-color: var(--primary); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌾</span>
+        <h1>কৃষি<span>সহায়তা</span></h1>
+      </a>
+      <div class="header-actions">
+        <button class="dark-toggle" id="darkToggle">
+          <i class="fas fa-moon"></i> <span>ডার্ক</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+      <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+      <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+      <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+      <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+      <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+      <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>    <!-- নতুন -->
+      <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>                   <!-- নতুন -->
+      <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a> 
+      <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>                      <!-- নতুন -->
+      <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+      <a href="chat.html" class="active"><i class="fas fa-comments"></i><span data-i18n="nav_chat">চ্যাট</span></a>
+      <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+      <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+      <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+      <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+      <a href="admin-reports.html">রিপোর্ট</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="container">
+
+    <h2 class="section-title"><i class="fas fa-comments"></i> লাইভ চ্যাট</h2>
+    <p style="color:var(--text-light); margin-bottom:20px;">
+      অন্যান্য কৃষকদের সাথে মত বিনিময় করুন, প্রশ্ন করুন এবং পরামর্শ নিন।
+    </p>
+
+    <div class="online-badge">
+      <span class="dot"></span> অনলাইন
+    </div>
+
+    <div class="chat-user-info">
+      <input type="text" id="chatName" placeholder="👤 আপনার নাম" value="কৃষক জন" />
+      <div class="room-selector">
+        <button class="active" data-room="general">🌾 সাধারণ</button>
+        <button data-room="bazaar">📊 বাজার</button>
+        <button data-room="equipment">🚜 যন্ত্রপাতি</button>
+      </div>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-messages" id="chatMessages">
+        <div style="text-align:center; color:var(--gray); padding:20px;">
+          <i class="fas fa-comment-dots" style="font-size:2rem; display:block; margin-bottom:8px;"></i>
+          চ্যাট শুরু করতে মেসেজ লিখুন...
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="💬 আপনার বার্তা লিখুন..." />
+        <button id="sendBtn"><i class="fas fa-paper-plane"></i> পাঠান</button>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;">
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/firebase-config.js"></script>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">টার্মস অ্যান্ড কন্ডিশন</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম | সব অধিকার সংরক্ষিত</p>
+      <p style="opacity:0.6; font-size:0.85rem; margin-top:4px;">
+        <i class="fas fa-code"></i> প্রযুক্তি সহায়তায় কৃষির উন্নয়ন
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/language.js"></script>
+<script>
+  (function() {
+    const loginNavBtn = document.getElementById('loginNavBtn');
+    const logoutNavBtn = document.getElementById('logoutNavBtn');
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        if (loginNavBtn) loginNavBtn.style.display = 'none';
+        if (logoutNavBtn) logoutNavBtn.style.display = 'inline-flex';
+      } else {
+        if (loginNavBtn) loginNavBtn.style.display = 'inline-flex';
+        if (logoutNavBtn) logoutNavBtn.style.display = 'none';
+      }
+    });
+
+    if (logoutNavBtn) {
+
+    logoutNavBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      firebase.auth().signOut().then(function() {
+        window.location.href = 'login.html';
+      });
+    });
+  }
+  })();
+</script>
+
+<!-- ===== SERVICE WORKER ===== -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js')
+        .then(function(registration) {
+          console.log('✅ Service Worker রেজিস্টার হয়েছে:', registration);
+        })
+        .catch(function(error) {
+          console.log('❌ Service Worker রেজিস্টার হয়নি:', error);
+        });
+    });
+  } else {
+    console.log('ℹ️ এই ব্রাউজার Service Worker সাপোর্ট করে না।');
+  }
+</script>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== DARK MODE =====
+  const toggleBtn = document.getElementById('darkToggle');
+  const body = document.body;
+
+  function toggleDark() {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    toggleBtn.innerHTML = isDark
+      ? '<i class="fas fa-sun"></i> <span>লাইট</span>'
+      : '<i class="fas fa-moon"></i> <span>ডার্ক</span>';
+  }
+
+  function loadDark() {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === 'enabled') {
+      body.classList.add('dark');
+      toggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>লাইট</span>';
+    }
+  }
+
+  toggleBtn.addEventListener('click', toggleDark);
+  document.addEventListener('DOMContentLoaded', loadDark);
+
+  // ===== TOAST =====
+  function showToast(msg, type) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.className = 'toast show ' + (type || 'success');
+    setTimeout(() => { t.className = 'toast'; }, 3500);
+  }
+  window.showToast = showToast;
+
+  // ============================================
+  // লাইভ চ্যাট পেজের JavaScript
+  // ============================================
+
+  var chatMessages = document.getElementById('chatMessages');
+  var chatInput = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('sendBtn');
+  var chatName = document.getElementById('chatName');
+  var roomBtns = document.querySelectorAll('.room-selector button');
+
+  var currentRoom = 'general';
+  var userName = chatName ? chatName.value || 'কৃষক জন' : 'কৃষক জন';
+
+  // ===== মেসেজ অ্যাড =====
+  function addMessage(data) {
+    if (!chatMessages) return;
+    var isMine = (data.name === userName);
+    var div = document.createElement('div');
+    div.className = 'message' + (isMine ? ' mine' : '');
+    div.innerHTML = '<div><span class="sender">' + data.name + '</span><span class="time">' + (data.time || 'এখন') + '</span></div><div class="text">' + data.message + '</div>';
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // ===== রুম চেঞ্জ =====
+  function changeRoom(room) {
+    currentRoom = room;
+    for (var i = 0; i < roomBtns.length; i++) {
+      var btn = roomBtns[i];
+      if (btn.dataset.room === room) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    }
+    if (chatMessages) {
+      chatMessages.innerHTML = '<div style="text-align:center; color:var(--gray); padding:20px;"><i class="fas fa-spinner fa-spin" style="font-size:2rem; display:block;"></i>মেসেজ লোড হচ্ছে...</div>';
+    }
+    // Firebase চ্যাট ফাংশন কল (যদি থাকে)
+    if (typeof window.listenMessages === 'function') {
+      window.listenMessages(room, addMessage);
+    } else {
+      // Firebase না থাকলে ডেমো মেসেজ দেখান
+      setTimeout(function() {
+        if (chatMessages && chatMessages.children.length <= 1) {
+          var demo = [
+            { name: 'আব্দুল্লাহ', message: 'আসসালামু আলাইকুম! ' + room + ' রুমে স্বাগতম!', time: 'এখন' },
+            { name: 'ফাতেমা', message: 'ওয়ালাইকুম আসসালাম! কেমন আছেন সবাই?', time: 'এখন' }
+          ];
+          for (var k = 0; k < demo.length; k++) {
+            addMessage(demo[k]);
+          }
+        }
+      }, 1000);
+    }
+  }
+
+  // ===== মেসেজ পাঠানো =====
+  function sendMessage() {
+    if (!chatInput) return;
+    var msg = chatInput.value.trim();
+    if (!msg) return;
+    var name = chatName ? chatName.value.trim() : 'অতিথি';
+    if (!name) name = 'অতিথি';
+    userName = name;
+
+    if (typeof window.sendMessage === 'function') {
+      window.sendMessage(currentRoom, name, msg);
+    } else {
+      addMessage({ name: name, message: msg, time: new Date().toLocaleString('bn-BD') });
+    }
+    chatInput.value = '';
+  }
+
+  // ===== ইভেন্ট লিসেনার =====
+  if (sendBtn) {
+    sendBtn.addEventListener('click', sendMessage);
+  }
+  if (chatInput) {
+    chatInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+  }
+
+  for (var j = 0; j < roomBtns.length; j++) {
+    (function(index) {
+      var btn = roomBtns[index];
+      btn.addEventListener('click', function() {
+        changeRoom(this.dataset.room);
+      });
+    })(j);
+  }
+
+  // ===== নাম সেভ =====
+  if (chatName) {
+    try {
+      var saved = localStorage.getItem('chatUserName');
+      if (saved) {
+        chatName.value = saved;
+        userName = saved;
+      }
+    } catch(e) {}
+    chatName.addEventListener('change', function() {
+      userName = this.value.trim() || 'অতিথি';
+      try {
+        localStorage.setItem('chatUserName', userName);
+      } catch(e) {}
+    });
+  }
+
+  // ===== ডেমো মেসেজ (Firebase না থাকলে) =====
+  setTimeout(function() {
+    if (chatMessages && chatMessages.children.length <= 1) {
+      var demo = [
+        { name: 'আব্দুল্লাহ', message: 'আসসালামু আলাইকুম! সবাই কেমন আছেন?', time: 'এখন' },
+        { name: 'ফাতেমা', message: 'ওয়ালাইকুম আসসালাম! ভালো আছি। আপনারা কেমন আছেন?', time: 'এখন' }
+      ];
+      for (var k = 0; k < demo.length; k++) {
+        addMessage(demo[k]);
+      }
+    }
+  }, 1000);
+
+  console.log('💬 লাইভ চ্যাট লোড হয়েছে!');
+</script>
+
+</body>
+</html>

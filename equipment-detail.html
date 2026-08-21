@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+  <!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+  <!-- ===== Google Analytics ===== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+<script src="js/analytics.js"></script>
+
+
+  <!-- ===== PWA ===== -->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+<meta name="theme-color" content="#1a5e2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  <title>যন্ত্রপাতি ডিটেইলস - কৃষি সহায়তা</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- ===== হোমপেজের স্টাইল (একই) ===== -->
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #1a5e2a;
+      --primary-dark: #0f3d1a;
+      --primary-light: #2e8b57;
+      --secondary: #f5b042;
+      --bg: #f4f9f4;
+      --white: #ffffff;
+      --text-dark: #1a2a1f;
+      --text-light: #4a5a4f;
+      --shadow: 0 8px 30px rgba(0,40,20,0.08);
+      --shadow-hover: 0 16px 48px rgba(0,60,30,0.12);
+      --radius: 20px;
+      --radius-btn: 60px;
+      --transition: all 0.3s ease;
+      --max-width: 1200px;
+      --font: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+      min-height: 100vh;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 40px);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: var(--white);
+    }
+    .logo .logo-icon {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--secondary);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .logo span { color: var(--secondary); }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+
+    /* ===== DARK TOGGLE ===== */
+    .dark-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(4px);
+    }
+    .dark-toggle:hover {
+      background: rgba(255,255,255,0.15);
+      transform: scale(1.04);
+      border-color: var(--secondary);
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      background: var(--white);
+      padding: 10px 0;
+      border-bottom: 3px solid var(--secondary);
+      position: sticky;
+      top: 72px;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    .nav-inner {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      min-width: max-content;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      color: var(--text-light);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    nav a i { font-size: 1rem; }
+    nav a:hover { background: var(--bg); color: var(--primary); }
+    nav a.active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(26,94,42,0.25);
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 40px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 4px solid var(--secondary);
+    }
+    .section-title i { color: var(--secondary); font-size: 1.6rem; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 4px 16px rgba(26,94,42,0.3); }
+    .btn-primary:hover { background: var(--primary-dark); transform: scale(1.04); }
+    .btn-sm { padding: 8px 20px; font-size: 0.85rem; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary-dark);
+      color: #ccddcc;
+      padding: 40px 0 20px;
+      margin-top: 40px;
+      border-top: 5px solid var(--secondary);
+    }
+    .footer-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    footer h4 { color: var(--secondary); margin-bottom: 12px; font-size: 1.1rem; }
+    footer ul { list-style: none; }
+    footer ul li { padding: 4px 0; }
+    footer ul a { color: #b3d9b3; transition: var(--transition); }
+    footer ul a:hover { color: var(--secondary); }
+    footer .social {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    footer .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      color: #b3d9b3;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    footer .social a:hover {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      transform: scale(1.08);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 18px;
+      margin-top: 25px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ===== TOAST ===== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.5s ease;
+      pointer-events: none;
+      max-width: 90%;
+      text-align: center;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.success { background: var(--primary); }
+    .toast.error { background: #dc3545; }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+      --bg: #0d1f13;
+      --white: #1e3324;
+      --text-dark: #e0eee0;
+      --text-light: #b3d9b3;
+      --shadow: 0 8px 30px rgba(0,0,0,0.4);
+      --shadow-hover: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    body.dark .card,
+    body.dark .quick-card,
+    body.dark .feature-card { background: var(--white); }
+    body.dark nav { background: var(--white); }
+    body.dark nav a { color: var(--text-light); }
+    body.dark nav a.active { background: var(--primary); color: var(--white); }
+    body.dark .dark-toggle { border-color: rgba(255,255,255,0.15); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; align-items: stretch; text-align: center; }
+      .header-actions { justify-content: center; }
+      nav { top: 120px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .dark-toggle { padding: 6px 12px; font-size: 0.8rem; }
+    }
+
+    /* ===== যন্ত্রপাতি ডিটেইলস পেজের অতিরিক্ত স্টাইল ===== */
+    .detail-hero {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: clamp(25px, 4vw, 40px);
+      border-radius: var(--radius);
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .detail-hero .emoji { font-size: clamp(3.5rem, 8vw, 5rem); }
+    .detail-hero .info { flex: 1; }
+    .detail-hero .info h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 4px; }
+    .detail-hero .info .sub { opacity: 0.85; font-size: 1.05rem; }
+    .detail-hero .info .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .detail-hero .info .tags .badge {
+      font-size: 0.8rem;
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    .detail-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 600px) {
+      .detail-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .detail-card {
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--secondary);
+      transition: var(--transition);
+    }
+    .detail-card:hover { transform: translateX(4px); box-shadow: var(--shadow-hover); }
+    .detail-card .label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .detail-card .value {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 2px;
+    }
+    .detail-card .value i { margin-right: 8px; color: var(--secondary); }
+
+    .detail-description {
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+    }
+    .detail-description h4 { color: var(--primary); margin-bottom: 6px; }
+    .detail-description p { color: var(--text-light); font-size: 1.05rem; line-height: 1.8; }
+
+    .detail-tips {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: var(--radius);
+      border-left: 5px solid var(--secondary);
+      margin-top: 20px;
+    }
+    .detail-tips h4 { color: var(--primary); margin-bottom: 4px; }
+    .detail-tips p { color: var(--text-light); font-size: 1rem; }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+      color: var(--primary);
+      padding: 10px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      margin-bottom: 20px;
+    }
+    .back-btn:hover { background: var(--primary); color: var(--white); transform: scale(1.04); }
+
+    .rent-btn-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 40px;
+      font-size: 1.2rem;
+      background: var(--secondary);
+      color: var(--text-dark);
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(245, 176, 66, 0.35);
+    }
+    .rent-btn-large:hover { transform: scale(1.04); background: var(--secondary-light); }
+
+    .contact-info {
+      background: var(--bg);
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--secondary);
+      margin-top: 20px;
+    }
+
+    .not-found {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .not-found i { font-size: 4rem; color: #ccc; display: block; margin-bottom: 12px; }
+    .not-found h2 { color: var(--text-light); margin-bottom: 8px; }
+    .not-found p { color: var(--gray); }
+
+    .related-section { margin-top: 30px; }
+    .related-section h4 { color: var(--primary); margin-bottom: 12px; }
+    .related-crops {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .related-crops .related-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      border: 2px solid var(--primary);
+      border-radius: 50px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .related-crops .related-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: scale(1.04);
+    }
+
+    /* ===== ডার্ক মোড ===== */
+    body.dark .detail-card,
+    body.dark .detail-description,
+    body.dark .detail-tips { background: var(--white); }
+    body.dark .detail-tips p { color: var(--text-light); }
+    body.dark .contact-info { background: var(--white); }
+    body.dark .related-crops .related-btn {
+      border-color: var(--primary-light);
+      color: var(--text-light);
+    }
+    body.dark .related-crops .related-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+    body.dark .back-btn { background: var(--white); color: var(--text-light); }
+    body.dark .back-btn:hover { background: var(--primary); color: var(--white); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌾</span>
+        <h1>কৃষি<span>সহায়তা</span></h1>
+      </a>
+      <div class="header-actions">
+        <button class="dark-toggle" id="darkToggle">
+          <i class="fas fa-moon"></i> <span>ডার্ক</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+      <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+      <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+      <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+      <a href="equipment-detail.html"><i class="fas fa-tractor"></i><span data-i18n="nav_equipment-detail">যন্ত্রপাতির বিস্তারিত</span></a>
+      <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+      <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+      <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>    <!-- নতুন -->
+      <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>                   <!-- নতুন -->
+      <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a>
+      <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>                       <!-- নতুন -->
+      <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+      <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+      <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+      <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+      <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+      <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+      <a href="admin-reports.html">রিপোর্ট</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="container">
+
+    <a href="equipment.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> যন্ত্রপাতির তালিকায় ফিরে যান
+    </a>
+
+    <!-- ===== কন্টেন্ট এরিয়া ===== -->
+    <div id="detailContent">
+      <!-- JavaScript দিয়ে ডাইনামিকভাবে দেখানো হবে -->
+    </div>
+
+    <div style="margin-top:30px;">
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">টার্মস অ্যান্ড কন্ডিশন</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম | সব অধিকার সংরক্ষিত</p>
+      <p style="opacity:0.6; font-size:0.85rem; margin-top:4px;">
+        <i class="fas fa-code"></i> প্রযুক্তি সহায়তায় কৃষির উন্নয়ন
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/language.js"></script>
+<script>
+  (function() {
+    const loginNavBtn = document.getElementById('loginNavBtn');
+    const logoutNavBtn = document.getElementById('logoutNavBtn');
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        if (loginNavBtn) loginNavBtn.style.display = 'none';
+        if (logoutNavBtn) logoutNavBtn.style.display = 'inline-flex';
+      } else {
+        if (loginNavBtn) loginNavBtn.style.display = 'inline-flex';
+        if (logoutNavBtn) logoutNavBtn.style.display = 'none';
+      }
+    });
+
+    if (logoutNavBtn) {
+
+    logoutNavBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      firebase.auth().signOut().then(function() {
+        window.location.href = 'login.html';
+      });
+    });
+  }
+  })();
+</script>
+
+<!-- ===== SERVICE WORKER ===== -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js')
+        .then(function(registration) {
+          console.log('✅ Service Worker রেজিস্টার হয়েছে:', registration);
+        })
+        .catch(function(error) {
+          console.log('❌ Service Worker রেজিস্টার হয়নি:', error);
+        });
+    });
+  } else {
+    console.log('ℹ️ এই ব্রাউজার Service Worker সাপোর্ট করে না।');
+  }
+</script>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== DARK MODE =====
+  const toggleBtn = document.getElementById('darkToggle');
+  const body = document.body;
+
+  function toggleDark() {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    toggleBtn.innerHTML = isDark
+      ? '<i class="fas fa-sun"></i> <span>লাইট</span>'
+      : '<i class="fas fa-moon"></i> <span>ডার্ক</span>';
+  }
+
+  function loadDark() {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === 'enabled') {
+      body.classList.add('dark');
+      toggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>লাইট</span>';
+    }
+  }
+
+  toggleBtn.addEventListener('click', toggleDark);
+  document.addEventListener('DOMContentLoaded', loadDark);
+
+  // ===== TOAST =====
+  function showToast(msg, type) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.className = 'toast show ' + (type || 'success');
+    setTimeout(() => { t.className = 'toast'; }, 3500);
+  }
+  window.showToast = showToast;
+
+  // ============================================
+  // যন্ত্রপাতি ডিটেইলস পেজের JavaScript
+  // ============================================
+
+  // ===== যন্ত্রপাতি ডাটাবেস =====
+  var equipData = [
+    {
+      id: 1,
+      name: 'ট্রাক্টর',
+      emoji: '🚜',
+      category: 'ভারী যন্ত্রপাতি',
+      rent: 1200,
+      daily: 8000,
+      status: 'available',
+      location: 'বগুড়া সদর',
+      contact: '০১৭১১-১১১১১১',
+      rating: 4.8,
+      reviews: 156,
+      features: ['৬০ এইচপি ইঞ্জিন', '৪ সিলিন্ডার', 'পাওয়ার স্টিয়ারিং', 'এসি কেবিন'],
+      description: 'জমি চাষ, লাঙ্গল, মই দেওয়া—সব কাজে ব্যবহার হয়।',
+      tips: 'ভাড়া নেওয়ার আগে ইঞ্জিন ও টায়ার চেক করুন।'
+    },
+    {
+      id: 2,
+      name: 'কম্বাইন হারভেস্টার',
+      emoji: '🌾',
+      category: 'ফসল কাটার যন্ত্রপাতি',
+      rent: 3000,
+      daily: 20000,
+      status: 'available',
+      location: 'পাবনা সদর',
+      contact: '০১৭২২-২২২২২২',
+      rating: 4.9,
+      reviews: 89,
+      features: ['৪.৫ মিটার কাটিং', '১০০০ লিটার হপার', 'এসি কেবিন', 'জিপিএস ট্র্যাকিং'],
+      description: 'একই সাথে ফসল কাটা, মাড়াই ও পরিষ্কার করে। সময় বাঁচায় অনেক।',
+      tips: 'জমির আকার অনুযায়ী সঠিক মেশিন নির্বাচন করুন।'
+    },
+    {
+      id: 3,
+      name: 'সেচ পাম্প (ডিজেল)',
+      emoji: '💧',
+      category: 'সেচ যন্ত্রপাতি',
+      rent: 500,
+      daily: 3500,
+      status: 'available',
+      location: 'রাজশাহী সদর',
+      contact: '০১৭৩৩-৩৩৩৩৩৩',
+      rating: 4.5,
+      reviews: 234,
+      features: ['১০ এইচপি', '১০০ ফুট হেড', 'ডিজেল চালিত', '৫০০০ লিটার/ঘণ্টা'],
+      description: 'ডিজেল চালিত শক্তিশালী পাম্প, বড় জমিতে সেচের জন্য উপযুক্ত।',
+      tips: 'পাইপের জোড়া ভালোভাবে চেক করুন, পানি লিক হচ্ছে কিনা দেখুন।'
+    },
+    {
+      id: 4,
+      name: 'বীজ বপনের মেশিন',
+      emoji: '🌱',
+      category: 'চাষ যন্ত্রপাতি',
+      rent: 800,
+      daily: 5500,
+      status: 'rented',
+      location: 'দিনাজপুর সদর',
+      contact: '০১৭৫৫-৫৫৫৫৫৫',
+      rating: 4.6,
+      reviews: 112,
+      features: ['১২ লাইন', 'অ্যাডজাস্টেবল ডেপথ', '৫০ কেজি হপার', 'দ্রুত ক্লিনিং'],
+      description: 'স্বয়ংক্রিয়ভাবে বীজ বপন করে, সময় ও শ্রম বাঁচায়।',
+      tips: 'বীজের আকার অনুযায়ী সেটিংস ঠিক করুন।'
+    },
+    {
+      id: 5,
+      name: 'স্প্রে মেশিন (ব্যাকপ্যাক)',
+      emoji: '🧴',
+      category: 'সুরক্ষা যন্ত্রপাতি',
+      rent: 400,
+      daily: 2800,
+      status: 'available',
+      location: 'কুষ্টিয়া সদর',
+      contact: '০১৭৬৬-৬৬৬৬৬৬',
+      rating: 4.3,
+      reviews: 98,
+      features: ['২০ লিটার ট্যাংক', '৪ নোজেল', 'বৈদ্যুতিক পাম্প', 'হালকা ওজন'],
+      description: 'কীটনাশক, আগাছানাশক ও রোগনাশক প্রয়োগের জন্য।',
+      tips: 'প্রেসার ঠিক রাখুন, সুরক্ষা চশমা ও মাস্ক ব্যবহার করুন।'
+    },
+    {
+      id: 6,
+      name: 'পরিবহন ট্রাক (৩ টন)',
+      emoji: '🚛',
+      category: 'পরিবহন যন্ত্রপাতি',
+      rent: 1500,
+      daily: 10000,
+      status: 'unavailable',
+      location: 'নাটোর সদর',
+      contact: '০১৭৭৭-৭৭৭৭৭৭',
+      rating: 4.4,
+      reviews: 67,
+      features: ['৩ টন পে-লোড', 'ডিজেল ইঞ্জিন', 'হাইড্রোলিক লিফট', 'এসি কেবিন'],
+      description: 'ফসল, সার, যন্ত্রপাতি—সব পরিবহনের জন্য।',
+      tips: 'তেল-পানি চেক করুন, ওভারলোড করবেন না।'
+    }
+  ];
+
+  // ===== অল ইকুইপমেন্ট (রিলেটেড এর জন্য) =====
+  var allEquip = equipData.map(function(e) {
+    return { id: e.id, name: e.name, emoji: e.emoji, category: e.category };
+  });
+
+  // ===== ID পাওয়া =====
+  function getEquipId() {
+    var params = new URLSearchParams(window.location.search);
+    return params.get('id');
+  }
+
+  // ===== রেন্ডার =====
+  function renderDetail() {
+    var id = getEquipId();
+    var container = document.getElementById('detailContent');
+
+    if (!container) {
+      console.error('❌ detailContent এলিমেন্ট পাওয়া যায়নি!');
+      return;
+    }
+
+    if (!id || !equipData[id - 1]) {
+      container.innerHTML = `
+        <div class="not-found">
+          <i class="fas fa-search"></i>
+          <h2>যন্ত্রপাতি খুঁজে পাওয়া যায়নি</h2>
+          <p>আপনি যে যন্ত্রপাতিটি খুঁজছেন তা আমাদের ডাটাবেসে নেই।</p>
+          <a href="equipment.html" class="btn btn-primary" style="margin-top:16px;">
+            <i class="fas fa-arrow-left"></i> যন্ত্রপাতির তালিকায় ফিরে যান
+          </a>
+        </div>
+      `;
+      return;
+    }
+
+    var item = equipData[id - 1];
+    var equipId = parseInt(id);
+
+    // ===== স্ট্যাটাস ম্যাপ =====
+    var statusMap = {
+      'available': '<span class="badge badge-success">উপলব্ধ</span>',
+      'rented': '<span class="badge badge-warning">ভাড়ায় গেছে</span>',
+      'unavailable': '<span class="badge badge-danger">অউপলব্ধ</span>'
+    };
+
+    // ===== ফিচার লিস্ট =====
+    var featuresHtml = '';
+    if (item.features && item.features.length > 0) {
+      var featureItems = '';
+      for (var i = 0; i < item.features.length; i++) {
+        featureItems += '<span class="tag" style="background:#e8f5e9; padding:4px 14px; border-radius:20px; display:inline-block; margin:4px;">' + item.features[i] + '</span>';
+      }
+      featuresHtml = '<div style="background:var(--white); padding:20px; border-radius:var(--radius); box-shadow:var(--shadow); margin-top:20px;"><h4 style="color:var(--primary);"><i class="fas fa-list"></i> বিশেষ বৈশিষ্ট্য</h4><div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">' + featureItems + '</div></div>';
+    }
+
+    // ===== ভাড়া বাটন =====
+    var rentButton = '';
+    if (item.status === 'available') {
+      rentButton = '<a href="rental.html?equip=' + item.id + '" class="rent-btn-large"><i class="fas fa-hand-holding-usd"></i> এখনই ভাড়া নিন</a>';
+    }
+
+    // ===== সম্পর্কিত যন্ত্রপাতি =====
+    var relatedHtml = '';
+    var relatedCount = 0;
+    for (var j = 0; j < allEquip.length; j++) {
+      var e = allEquip[j];
+      if (e.id !== equipId && e.category === item.category && relatedCount < 4) {
+        relatedHtml += '<a href="equipment-detail.html?id=' + e.id + '" class="related-btn">' + e.emoji + ' ' + e.name + '</a>';
+        relatedCount++;
+      }
+    }
+    if (relatedHtml === '') {
+      relatedHtml = '<span style="color:var(--gray);">অন্যান্য যন্ত্রপাতির জন্য তালিকায় দেখুন</span>';
+    }
+
+    // ===== রেটিং স্টার =====
+    var stars = '';
+    var fullStars = Math.floor(item.rating);
+    var halfStar = item.rating % 1 >= 0.5 ? 1 : 0;
+    var emptyStars = 5 - fullStars - halfStar;
+    for (var s = 0; s < fullStars; s++) { stars += '<i class="fas fa-star" style="color:#f5c542;"></i>'; }
+    if (halfStar) { stars += '<i class="fas fa-star-half-alt" style="color:#f5c542;"></i>'; }
+    for (var es = 0; es < emptyStars; es++) { stars += '<i class="far fa-star" style="color:#ccc;"></i>'; }
+
+    // ===== রেন্ডার =====
+    container.innerHTML = `
+      <div class="detail-hero">
+        <div class="emoji">${item.emoji}</div>
+        <div class="info">
+          <h2>${item.name}</h2>
+          <div class="sub">
+            <i class="fas fa-tag"></i> ${item.category} &nbsp;|&nbsp; 
+            <i class="fas fa-map-marker-alt"></i> ${item.location}
+          </div>
+          <div class="tags">
+            <span class="badge"><i class="fas fa-taka-sign"></i> ${item.rent} টাকা/ঘণ্টা</span>
+            <span class="badge"><i class="fas fa-clock"></i> ${item.daily} টাকা/দিন</span>
+            ${statusMap[item.status] || ''}
+          </div>
+          <div style="margin-top:6px;">
+            ${stars}
+            <span style="font-size:0.9rem; opacity:0.85;">(${item.reviews} রিভিউ)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-description">
+        <h4><i class="fas fa-info-circle"></i> বিবরণ</h4>
+        <p>${item.description}</p>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-taka-sign"></i> ভাড়া (প্রতি ঘণ্টা)</div>
+          <div class="value">${item.rent} টাকা</div>
+        </div>
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-clock"></i> ভাড়া (প্রতি দিন)</div>
+          <div class="value">${item.daily} টাকা</div>
+        </div>
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-map-marker-alt"></i> অবস্থান</div>
+          <div class="value">${item.location}</div>
+        </div>
+        <div class="detail-card">
+          <div class="label"><i class="fas fa-phone"></i> যোগাযোগ</div>
+          <div class="value"><a href="tel:${item.contact}" style="color:var(--primary);">${item.contact}</a></div>
+        </div>
+      </div>
+
+      ${featuresHtml}
+
+      <div class="detail-tips">
+        <h4><i class="fas fa-lightbulb" style="color:#f5a623;"></i> বিশেষ টিপস</h4>
+        <p>${item.tips}</p>
+      </div>
+
+      <div style="margin-top:25px; display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+        ${rentButton}
+        <div class="contact-info">
+          <i class="fas fa-phone" style="color:var(--primary-light);"></i>
+          <strong>মালিকের সাথে যোগাযোগ:</strong> 
+          <a href="tel:${item.contact}" style="color:var(--primary); font-weight:600;">${item.contact}</a>
+        </div>
+      </div>
+
+      <div class="related-section">
+        <h4><i class="fas fa-link"></i> সম্পর্কিত যন্ত্রপাতি</h4>
+        <div class="related-crops">
+          ${relatedHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  // ===== পেজ লোড হলে রেন্ডার =====
+  document.addEventListener('DOMContentLoaded', function() {
+    renderDetail();
+    console.log('✅ যন্ত্রপাতি ডিটেইলস পেজ লোড হয়েছে!');
+  });
+
+  console.log('✅ কৃষি সহায়তা যন্ত্রপাতি ডিটেইলস পেজ লোড হয়েছে!');
+</script>
+
+</body>
+</html>

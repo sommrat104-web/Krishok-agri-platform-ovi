@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+<!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <title>রিপোর্ট - অ্যাডমিন প্যানেল</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .report-container { max-width: 1100px; margin: 30px auto; }
+        .report-card {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+        .report-card .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .report-card .card-title i { color: var(--secondary); }
+        .report-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+        .report-actions .btn-report {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-report-pdf { background: #dc3545; color: white; }
+        .btn-report-pdf:hover { background: #c82333; transform: scale(1.04); }
+        .btn-report-print { background: var(--primary); color: white; }
+        .btn-report-print:hover { background: var(--primary-dark); transform: scale(1.04); }
+        .btn-report-csv { background: #28a745; color: white; }
+        .btn-report-csv:hover { background: #218838; transform: scale(1.04); }
+        
+        /* ===== Report Preview ===== */
+        .report-preview {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+            margin-top: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+        }
+        .report-preview table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .report-preview table th {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .report-preview table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eef5ee;
+        }
+        .report-preview table tr:hover td { background: #f5faf5; }
+        
+        body.dark .report-card { background: var(--white); }
+        body.dark .report-preview { background: var(--white); }
+        body.dark .report-preview table td { border-color: var(--dark-border); }
+        body.dark .report-preview table tr:hover td { background: var(--bg); }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌾</span><h1>কৃষি<span>সহায়তা</span></h1></a>
+            <button class="dark-toggle" id="darkToggle"><i class="fas fa-moon"></i> <span>ডার্ক</span></button>
+        </div>
+    </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="active"><i class="fas fa-home"></i> হোম</a>
+      <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+      <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+      <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+      <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+      <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+      <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>    <!-- নতুন -->
+      <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>                   <!-- নতুন -->
+      <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a> 
+      <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>                      <!-- নতুন -->
+      <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+      <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+      <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+      <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+      <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+      <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+      <a href="admin-reports.html" class="active"><span data-i18n="nav_admin-reports">রিপোর্ট</span></a>
+      
+    </div>
+  </div>
+</nav>
+
+<main>
+    <div class="container">
+        <div class="report-container">
+            <h2 class="section-title"><i class="fas fa-file-pdf"></i> রিপোর্ট জেনারেট</h2>
+            
+            <!-- ===== ফসল রিপোর্ট ===== -->
+            <div class="report-card">
+                <div class="card-title"><i class="fas fa-seedling"></i> ফসল রিপোর্ট</div>
+                <div class="report-actions">
+                    <button class="btn-report btn-report-pdf" onclick="generateReport('crops', 'pdf')"><i class="fas fa-file-pdf"></i> PDF</button>
+                    <button class="btn-report btn-report-print" onclick="generateReport('crops', 'print')"><i class="fas fa-print"></i> প্রিন্ট</button>
+                    <button class="btn-report btn-report-csv" onclick="generateReport('crops', 'csv')"><i class="fas fa-file-csv"></i> CSV</button>
+                </div>
+                <div class="report-preview" id="previewCrops"></div>
+            </div>
+            
+            <!-- ===== অর্ডার রিপোর্ট ===== -->
+            <div class="report-card">
+                <div class="card-title"><i class="fas fa-shopping-cart"></i> অর্ডার রিপোর্ট</div>
+                <div class="report-actions">
+                    <button class="btn-report btn-report-pdf" onclick="generateReport('orders', 'pdf')"><i class="fas fa-file-pdf"></i> PDF</button>
+                    <button class="btn-report btn-report-print" onclick="generateReport('orders', 'print')"><i class="fas fa-print"></i> প্রিন্ট</button>
+                    <button class="btn-report btn-report-csv" onclick="generateReport('orders', 'csv')"><i class="fas fa-file-csv"></i> CSV</button>
+                </div>
+                <div class="report-preview" id="previewOrders"></div>
+            </div>
+            
+            <!-- ===== ইউজার রিপোর্ট ===== -->
+            <div class="report-card">
+                <div class="card-title"><i class="fas fa-users"></i> ইউজার রিপোর্ট</div>
+                <div class="report-actions">
+                    <button class="btn-report btn-report-pdf" onclick="generateReport('users', 'pdf')"><i class="fas fa-file-pdf"></i> PDF</button>
+                    <button class="btn-report btn-report-print" onclick="generateReport('users', 'print')"><i class="fas fa-print"></i> প্রিন্ট</button>
+                    <button class="btn-report btn-report-csv" onclick="generateReport('users', 'csv')"><i class="fas fa-file-csv"></i> CSV</button>
+                </div>
+                <div class="report-preview" id="previewUsers"></div>
+            </div>
+            
+            <!-- ===== বাজারদর রিপোর্ট ===== -->
+            <div class="report-card">
+                <div class="card-title"><i class="fas fa-tags"></i> বাজারদর রিপোর্ট</div>
+                <div class="report-actions">
+                    <button class="btn-report btn-report-pdf" onclick="generateReport('market', 'pdf')"><i class="fas fa-file-pdf"></i> PDF</button>
+                    <button class="btn-report btn-report-print" onclick="generateReport('market', 'print')"><i class="fas fa-print"></i> প্রিন্ট</button>
+                    <button class="btn-report btn-report-csv" onclick="generateReport('market', 'csv')"><i class="fas fa-file-csv"></i> CSV</button>
+                </div>
+                <div class="report-preview" id="previewMarket"></div>
+            </div>
+            
+        </div>
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">টার্মস অ্যান্ড কন্ডিশন</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম | সব অধিকার সংরক্ষিত</p>
+      <p style="opacity:0.6; font-size:0.85rem; margin-top:4px;">
+        <i class="fas fa-code"></i> প্রযুক্তির সহায়তায় কৃষির উন্নয়ন
+      </p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="js/dark-mode.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/admin-reports.js"></script>
+<script src="js/language.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+# ============================================
+# Robots.txt - সার্চ ইঞ্জিনকে গাইড
+# ============================================
+
+User-agent: *
+Allow: /
+
+# ===== সাইটম্যাপ =====
+Sitemap: https://your-username.github.io/krisok-agri-platform/sitemap.xml
+
+# ===== ব্লক করা পেজ =====
+Disallow: /admin.html
+Disallow: /admin-backup.html
+Disallow: /admin-reports.html
+Disallow: /login.html
+Disallow: /profile.html
+
+# ===== Crawl Delay =====
+Crawl-delay: 1

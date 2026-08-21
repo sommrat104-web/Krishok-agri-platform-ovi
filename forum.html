@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <!-- ===== Basic Meta ===== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু。" />
+    <meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="কৃষি সহায়তা টিম" />
+
+    <!-- ===== Open Graph ===== -->
+    <meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+    <meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+    <meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/team-image.jpg" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+    <meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+    <meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+    <!-- ===== Canonical ===== -->
+    <link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+    <!-- ===== Google Analytics ===== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+    <script src="js/analytics.js"></script>
+
+    <!-- ===== PWA ===== -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1a5e2a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>কমিউনিটি ফোরাম - কৃষি সহায়তা</title>
+
+    <!-- ===== ফন্ট ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ===== আইকন ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== CSS VARIABLES (অন্য পেজের সাথে মিল) ===== */
+        :root {
+            --primary: #1a5e2a;
+            --primary-dark: #0f3d1a;
+            --primary-light: #2e8b57;
+            --secondary: #f5b042;
+            --bg: #f4f9f4;
+            --white: #ffffff;
+            --text-dark: #1a2a1f;
+            --text-light: #4a5a4f;
+            --gray: #8a9a8f;
+            --shadow: 0 8px 30px rgba(0,40,20,0.08);
+            --shadow-hover: 0 16px 48px rgba(0,60,30,0.12);
+            --radius: 20px;
+            --radius-btn: 60px;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+            --font: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+        }
+
+        /* ===== RESET ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+        a { text-decoration: none; color: inherit; }
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 clamp(16px, 4vw, 40px);
+        }
+
+        /* ===== HEADER (অন্য পেজের সাথে মিল) ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 800;
+            color: var(--white);
+        }
+        .logo .logo-icon {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--secondary);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        .logo span { color: var(--secondary); }
+        .header-actions { display: flex; align-items: center; gap: 12px; }
+
+        .dark-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(4px);
+        }
+        .dark-toggle:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.04);
+            border-color: var(--secondary);
+        }
+
+        /* ===== NAVIGATION (অন্য পেজের সাথে মিল) ===== */
+        nav {
+            background: var(--white);
+            padding: 10px 0;
+            border-bottom: 3px solid var(--secondary);
+            position: sticky;
+            top: 72px;
+            z-index: 999;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-inner {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            min-width: max-content;
+        }
+        nav a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.2vw, 1rem);
+            color: var(--text-light);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        nav a i { font-size: 1rem; }
+        nav a:hover { background: var(--bg); color: var(--primary); }
+        nav a.active {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(26,94,42,0.25);
+        }
+
+        /* ===== সেকশন টাইটেল ===== */
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 40px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 4px solid var(--secondary);
+        }
+        .section-title i { color: var(--secondary); font-size: 1.6rem; }
+
+        /* ===== ফোরাম কন্টেইনার ===== */
+        .forum-container { max-width: 1000px; margin: 0 auto; }
+        .forum-subtitle {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+
+        /* ===== স্ট্যাটস ===== */
+        .forum-stats {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            margin-bottom: 30px;
+        }
+        .stat-box {
+            background: var(--white);
+            padding: 18px 16px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .stat-box:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .stat-box .number {
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .stat-box .label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        .stat-box i {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ===== সার্চ ও ফিল্টার ===== */
+        .forum-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+            align-items: center;
+        }
+        .forum-toolbar .search-box {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 0 16px;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+        .forum-toolbar .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(26,94,42,0.08);
+        }
+        .forum-toolbar .search-box input {
+            flex: 1;
+            padding: 10px 12px;
+            border: none;
+            background: transparent;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            outline: none;
+            font-family: var(--font);
+        }
+        .forum-toolbar .search-box i {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        .forum-toolbar .filter-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .forum-toolbar .filter-tag {
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--white);
+            color: var(--text-light);
+            border: 2px solid #e0e8e0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .forum-toolbar .filter-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .forum-toolbar .filter-tag.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .forum-toolbar .filter-tag i { margin-right: 4px; }
+
+        /* ===== প্রশ্ন ফর্ম ===== */
+        .ask-form {
+            background: var(--white);
+            padding: 28px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: var(--transition);
+        }
+        .ask-form:hover { box-shadow: var(--shadow-hover); }
+        .ask-form h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ask-form h3 i { color: var(--secondary); }
+        .ask-form input,
+        .ask-form textarea,
+        .ask-form select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #d8e8d8;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+            background: var(--bg);
+            color: var(--text-dark);
+            font-family: var(--font);
+            margin-bottom: 12px;
+        }
+        .ask-form input:focus,
+        .ask-form textarea:focus,
+        .ask-form select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(46,125,94,0.1);
+        }
+        .ask-form textarea { resize: vertical; min-height: 80px; }
+        .ask-form .form-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .ask-form .form-row > * { flex: 1; min-width: 150px; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(26,94,42,0.3);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: scale(1.04);
+        }
+        .btn-sm { padding: 8px 20px; font-size: 0.85rem; }
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+            box-shadow: 0 4px 16px rgba(220,53,69,0.3);
+        }
+        .btn-danger:hover { background: #c82333; transform: scale(1.04); }
+
+        /* ===== প্রশ্ন তালিকা ===== */
+        .question-list { display: flex; flex-direction: column; gap: 16px; }
+
+        .question-card {
+            background: var(--white);
+            padding: 22px 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.04);
+            cursor: pointer;
+            position: relative;
+        }
+        .question-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .question-card .q-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+        .question-card .q-meta {
+            font-size: 0.8rem;
+            color: var(--gray);
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .question-card .q-body {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 8px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .question-card .q-stats {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 6px;
+        }
+        .question-card .q-stats .answered {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .question-card .q-stats .votes {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .question-card .q-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .question-card .q-tags .tag {
+            background: #e8f5e9;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        .question-card .q-tags .tag:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .question-card .q-actions {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            display: flex;
+            gap: 6px;
+        }
+        .question-card .q-actions button {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+        .question-card .q-actions button:hover {
+            background: rgba(220,53,69,0.1);
+            color: #dc3545;
+        }
+        .question-card .q-actions .vote-btn {
+            color: var(--secondary);
+        }
+        .question-card .q-actions .vote-btn:hover {
+            background: rgba(245,176,66,0.15);
+            color: var(--primary);
+        }
+
+        .no-questions {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gray);
+        }
+        .no-questions i { font-size: 4rem; color: #ddd; display: block; margin-bottom: 12px; }
+
+        /* ===== পেজিনেশন ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        .pagination button {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 2px solid #d8e8d8;
+            background: var(--white);
+            color: var(--text-dark);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .pagination button:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .pagination button.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* ===== মোডাল ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.show { display: flex; }
+        .modal-content {
+            background: var(--white);
+            max-width: 750px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: var(--radius);
+            padding: 32px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn {
+            from { transform: scale(0.95) translateY(20px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .modal-content .close-modal {
+            position: sticky;
+            top: 0;
+            float: right;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0 8px;
+            line-height: 1;
+        }
+        .modal-content .close-modal:hover { color: #dc3545; transform: rotate(90deg); }
+
+        .modal-content .modal-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+            padding-right: 40px;
+        }
+        .modal-content .modal-meta {
+            font-size: 0.85rem;
+            color: var(--gray);
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .modal-content .modal-body-text {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 12px;
+            padding: 12px 16px;
+            background: var(--bg);
+            border-radius: 12px;
+        }
+        .modal-content .modal-image {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 8px 0 12px;
+        }
+
+        .answer-item {
+            background: var(--bg);
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--secondary);
+            transition: var(--transition);
+        }
+        .answer-item:hover { border-left-color: var(--primary); }
+        .answer-item .a-meta {
+            font-size: 0.8rem;
+            color: var(--gray);
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .answer-item .a-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-top: 4px;
+        }
+        .answer-item .best-answer {
+            background: var(--secondary);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .answer-item .a-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .answer-item .a-actions button {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+        .answer-item .a-actions button:hover { color: var(--primary); }
+        .answer-item .a-actions .vote-btn { color: var(--secondary); }
+        .answer-item .a-actions .delete-btn:hover { color: #dc3545; }
+
+        .modal-content .answer-form {
+            margin-top: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .modal-content .answer-form input {
+            flex: 1;
+            padding: 10px 18px;
+            border: 2px solid #d8e8d8;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            outline: none;
+            background: var(--bg);
+            color: var(--text-dark);
+            min-width: 150px;
+            font-family: var(--font);
+            transition: var(--transition);
+        }
+        .modal-content .answer-form input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(46,125,94,0.1);
+        }
+        .modal-content .answer-form .btn { padding: 10px 24px; }
+
+        /* ===== টোস্ট ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.5s ease;
+            pointer-events: none;
+            max-width: 90%;
+            text-align: center;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .toast.success { background: var(--primary); }
+        .toast.error { background: #dc3545; }
+        .toast.info { background: #17a2b8; }
+
+        /* ===== ফুটার ===== */
+        footer {
+            background: var(--primary-dark);
+            color: #ccddcc;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            border-top: 5px solid var(--secondary);
+        }
+        .footer-grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        footer h4 { color: var(--secondary); margin-bottom: 12px; font-size: 1.1rem; }
+        footer ul { list-style: none; }
+        footer ul li { padding: 4px 0; }
+        footer ul a { color: #b3d9b3; transition: var(--transition); }
+        footer ul a:hover { color: var(--secondary); }
+        footer .social {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        footer .social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            color: #b3d9b3;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        footer .social a:hover {
+            background: var(--secondary);
+            color: var(--primary-dark);
+            transform: scale(1.08);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 18px;
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* ===== ডার্ক মোড (অন্য পেজের সাথে মিল) ===== */
+        body.dark {
+            --bg: #0d1f13;
+            --white: #1e3324;
+            --text-dark: #e0eee0;
+            --text-light: #b3d9b3;
+            --gray: #8aaa8f;
+            --shadow: 0 8px 30px rgba(0,0,0,0.4);
+            --shadow-hover: 0 16px 48px rgba(0,0,0,0.5);
+        }
+        body.dark .stat-box,
+        body.dark .ask-form,
+        body.dark .question-card,
+        body.dark .modal-content,
+        body.dark .forum-toolbar .search-box,
+        body.dark .pagination button { background: var(--white); }
+        body.dark nav { background: var(--white); }
+        body.dark nav a { color: var(--text-light); }
+        body.dark nav a.active { background: var(--primary); color: var(--white); }
+        body.dark .dark-toggle { border-color: rgba(255,255,255,0.15); }
+        body.dark .ask-form input,
+        body.dark .ask-form textarea,
+        body.dark .ask-form select,
+        body.dark .modal-content .answer-form input {
+            background: var(--white);
+            border-color: #2a4a2f;
+            color: var(--text-dark);
+        }
+        body.dark .question-card .q-tags .tag {
+            background: #2a4a2f;
+            color: #b3d9b3;
+        }
+        body.dark .modal-content .modal-body-text,
+        body.dark .answer-item {
+            background: #0d1f13;
+        }
+        body.dark .forum-toolbar .filter-tag {
+            background: var(--white);
+            color: var(--text-light);
+            border-color: #2a4a2f;
+        }
+        body.dark .forum-toolbar .filter-tag.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        body.dark .pagination button {
+            border-color: #2a4a2f;
+            color: var(--text-light);
+        }
+        body.dark .pagination button.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* ===== রেসপনসিভ ===== */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; align-items: stretch; text-align: center; }
+            .header-actions { justify-content: center; }
+            nav { top: 120px; }
+            .forum-toolbar { flex-direction: column; }
+            .forum-toolbar .search-box { width: 100%; }
+            .question-card .q-actions { position: static; margin-top: 8px; justify-content: flex-end; }
+            .modal-content { padding: 20px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .forum-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .dark-toggle { padding: 6px 12px; font-size: 0.8rem; }
+            .ask-form .form-row { flex-direction: column; }
+            .modal-content .answer-form { flex-direction: column; }
+            .forum-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌾</span>
+                <h1>কৃষি<span>সহায়তা</span></h1>
+            </a>
+            <div class="header-actions">
+                <button class="dark-toggle" id="darkToggle">
+                    <i class="fas fa-moon"></i> <span>ডার্ক</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <div class="container">
+        <div class="nav-inner">
+            <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+            <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+            <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+            <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+            <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+            <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+            <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+            <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>
+            <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>
+            <a href="forum.html" class="active"><i class="fas fa-users"></i> ফোরাম</a>
+            <a href="shop.html"><i class="fas fa-store"></i> বাজার</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+            <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+            <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i> কার্ট</a>
+            <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+            <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+            <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+            <a href="admin-reports.html">রিপোর্ট</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+    <div class="container">
+        <div class="forum-container">
+
+            <!-- ===== শিরোনাম ===== -->
+            <h2 class="section-title"><i class="fas fa-users"></i> কৃষক কমিউনিটি ফোরাম</h2>
+            <p class="forum-subtitle">
+                <i class="fas fa-quote-left" style="color:var(--secondary);"></i>
+                আপনার কৃষি বিষয়ক প্রশ্ন করুন, অভিজ্ঞ কৃষকদের কাছ থেকে উত্তর পান।
+            </p>
+
+            <!-- ===== স্ট্যাটস ===== -->
+            <div class="forum-stats" id="forumStats">
+                <div class="stat-box">
+                    <i class="fas fa-question-circle"></i>
+                    <div class="number" id="totalQuestions">০</div>
+                    <div class="label">মোট প্রশ্ন</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-comment"></i>
+                    <div class="number" id="totalAnswers">০</div>
+                    <div class="label">মোট উত্তর</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-user-check"></i>
+                    <div class="number" id="totalUsers">০</div>
+                    <div class="label">সক্রিয় সদস্য</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-fire"></i>
+                    <div class="number" id="totalVotes">০</div>
+                    <div class="label">মোট ভোট</div>
+                </div>
+            </div>
+
+            <!-- ===== টুলবার ===== -->
+            <div class="forum-toolbar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="প্রশ্ন অনুসন্ধান...">
+                </div>
+                <div class="filter-tags" id="filterTags">
+                    <button class="filter-tag active" data-tag="all"><i class="fas fa-list"></i> সব</button>
+                    <button class="filter-tag" data-tag="সার"><i class="fas fa-flask"></i> সার</button>
+                    <button class="filter-tag" data-tag="রোগ"><i class="fas fa-bug"></i> রোগ</button>
+                </div>
+            </div>
+
+            <!-- ===== প্রশ্ন ফর্ম ===== -->
+            <div class="ask-form" id="askForm">
+                <h3><i class="fas fa-pen"></i> নতুন প্রশ্ন করুন</h3>
+                <div class="form-row">
+                    <input type="text" id="questionTitle" placeholder="প্রশ্নের শিরোনাম (উদা: ধান চাষের সঠিক সময়)" />
+                    <input type="text" id="questionTags" placeholder="ট্যাগ (কমা দিয়ে: ধান, চাষ, সময়)" />
+                </div>
+                <textarea id="questionBody" placeholder="বিস্তারিত প্রশ্ন লিখুন..."></textarea>
+                <input type="file" id="questionImage" accept="image/*" style="margin-bottom:12px;" />
+                <button class="btn btn-primary" id="askBtn">
+                    <i class="fas fa-paper-plane"></i> প্রশ্ন করুন
+                </button>
+                <span id="loginWarning" style="display:none; color:#dc3545; font-size:0.85rem; margin-left:12px;">
+                    <i class="fas fa-exclamation-circle"></i> প্রশ্ন করতে লগইন করুন!
+                </span>
+            </div>
+
+            <!-- ===== প্রশ্ন তালিকা ===== -->
+            <div id="questionList"></div>
+
+            <!-- ===== পেজিনেশন ===== -->
+            <div class="pagination" id="pagination"></div>
+
+        </div>
+
+        <div style="margin: 30px 0 20px;">
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান
+            </a>
+        </div>
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>🌾 কৃষি সহায়তা</h4>
+                <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি।(অভি)</p>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>দ্রুত লিংক</h4>
+                <ul>
+                    <li><a href="crops.html">ফসলের তথ্য</a></li>
+                    <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+                    <li><a href="bazardor.html">বাজারদর</a></li>
+                    <li><a href="forum.html">কমিউনিটি ফোরাম</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>সহায়তা</h4>
+                <ul>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">প্রাইভেসি পলিসি</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>যোগাযোগ</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+                    <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম । সব অধিকার সংরক্ষিত</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="questionModal">
+    <div class="modal-content">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<!-- ===== FIREBASE ===== -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/language.js"></script>
+
+<!-- ===== FORUM JS (সম্পূর্ণ) ===== -->
+<script>
+/**
+ * ============================================
+ * কমিউনিটি ফোরাম - সম্পূর্ণ JavaScript
+ * ============================================
+ */
+
+(function() {
+    'use strict';
+
+    // ===== DOM Elements =====
+    const questionList = document.getElementById('questionList');
+    const askBtn = document.getElementById('askBtn');
+    const titleInput = document.getElementById('questionTitle');
+    const bodyInput = document.getElementById('questionBody');
+    const tagsInput = document.getElementById('questionTags');
+    const imageInput = document.getElementById('questionImage');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('questionModal');
+    const modalBody = document.getElementById('modalBody');
+    const closeModal = document.getElementById('closeModal');
+    const pagination = document.getElementById('pagination');
+    const loginWarning = document.getElementById('loginWarning');
+
+    const totalQuestionsEl = document.getElementById('totalQuestions');
+    const totalAnswersEl = document.getElementById('totalAnswers');
+    const totalUsersEl = document.getElementById('totalUsers');
+    const totalVotesEl = document.getElementById('totalVotes');
+
+    // ===== State =====
+    let currentUser = null;
+    let database = null;
+    let allQuestions = [];
+    let filteredQuestions = [];
+    let currentPage = 1;
+    const ITEMS_PER_PAGE = 5;
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // ===== Utilities =====
+    function escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    function showToast(msg, type = 'success') {
+        const toast = document.getElementById('toast');
+        if (!toast) { console.log('📢', msg); return; }
+        toast.textContent = msg;
+        toast.className = 'toast show ' + type;
+        clearTimeout(toast._timer);
+        toast._timer = setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    function getTimeAgo(timestamp) {
+        if (!timestamp) return 'এখন';
+        const diff = Date.now() - timestamp;
+        const minutes = Math.floor(diff / 60000);
+        const hours = Math.floor(diff / 3600000);
+        const days = Math.floor(diff / 86400000);
+        if (minutes < 1) return 'এখন';
+        if (minutes < 60) return minutes + ' মিনিট আগে';
+        if (hours < 24) return hours + ' ঘণ্টা আগে';
+        if (days < 30) return days + ' দিন আগে';
+        return new Date(timestamp).toLocaleDateString('bn-BD');
+    }
+
+    function generateId() {
+        return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+    }
+
+    // ===== Demo Data =====
+    function getDemoQuestions() {
+        return [
+            {
+                id: 'demo1',
+                title: 'ধান চাষের সঠিক সময় কখন?',
+                body: 'আমি ধান চাষ করতে চাই। কোন মাসে বীজ বপন করলে ভালো ফলন পাব?',
+                author: 'মোঃ আব্দুল্লাহ',
+                timestamp: Date.now() - 7200000,
+                tags: ['ধান', 'চাষ', 'সময়'],
+                votes: 5,
+                answers: {
+                    ans1: { text: 'আমাদের এলাকায় বৈশাখ-জ্যৈষ্ঠ মাসে বীজ বপন করা হয়।', author: 'কৃষক সাইফুল', timestamp: Date.now() - 3600000, votes: 3 },
+                    ans2: { text: 'আমি ১৫ই জ্যৈষ্ঠ থেকে ১৫ই আষাঢ় এর মধ্যে করি।', author: 'মোঃ রফিক', timestamp: Date.now() - 1800000, votes: 1 }
+                },
+                bestAnswer: 'ans1'
+            },
+            {
+                id: 'demo2',
+                title: 'টমেটোর লেট ব্লাইট রোগের সমাধান কী?',
+                body: 'আমার টমেটো গাছে লেট ব্লাইট রোগ দেখা দিয়েছে। কী করলে ভালো হবে?',
+                author: 'মোসাঃ ফাতেমা',
+                timestamp: Date.now() - 18000000,
+                tags: ['টমেটো', 'রোগ', 'লেট ব্লাইট'],
+                votes: 8,
+                answers: {
+                    ans1: { text: 'কপার অক্সিক্লোরাইড স্প্রে করুন ৭ দিন পর পর।', author: 'ডঃ শাহিন', timestamp: Date.now() - 14400000, votes: 4 },
+                    ans2: { text: 'আক্রান্ত পাতা ছিঁড়ে ফেলুন এবং সঠিক বায়ু চলাচল নিশ্চিত করুন।', author: 'কৃষক হেলাল', timestamp: Date.now() - 7200000, votes: 2 }
+                },
+                bestAnswer: 'ans1'
+            },
+            {
+                id: 'demo3',
+                title: 'গম চাষে কী সার দিতে হবে?',
+                body: 'গম চাষ করতে চাই। কোন সার কতটুকু দিলে ভালো ফলন পাব?',
+                author: 'জন কৃষক',
+                timestamp: Date.now() - 86400000,
+                tags: ['গম', 'সার', 'চাষ'],
+                votes: 3,
+                answers: {}
+            }
+        ];
+    }
+
+    let demoQuestions = getDemoQuestions();
+
+    // ===== Stats Update =====
+    function updateStats(questions) {
+        if (!questions) questions = allQuestions;
+        let totalQ = questions.length;
+        let totalA = 0;
+        let totalV = 0;
+        let users = new Set();
+
+        questions.forEach(q => {
+            if (q.author) users.add(q.author);
+            if (q.votes) totalV += q.votes;
+            if (q.answers) {
+                const ans = Object.values(q.answers);
+                totalA += ans.length;
+                ans.forEach(a => {
+                    if (a.votes) totalV += a.votes;
+                    if (a.author) users.add(a.author);
+                });
+            }
+        });
+
+        if (totalQuestionsEl) totalQuestionsEl.textContent = totalQ;
+        if (totalAnswersEl) totalAnswersEl.textContent = totalA;
+        if (totalUsersEl) totalUsersEl.textContent = users.size || totalQ;
+        if (totalVotesEl) totalVotesEl.textContent = totalV;
+    }
+
+    // ===== Render Functions =====
+    function renderQuestions(questions) {
+        if (!questionList) return;
+
+        // ফিল্টার ও সার্চ প্রয়োগ
+        let filtered = questions || allQuestions;
+
+        if (currentFilter !== 'all') {
+            filtered = filtered.filter(q => 
+                q.tags && q.tags.some(t => t.toLowerCase().includes(currentFilter.toLowerCase()))
+            );
+        }
+
+        if (currentSearch.trim()) {
+            const search = currentSearch.trim().toLowerCase();
+            filtered = filtered.filter(q =>
+                q.title.toLowerCase().includes(search) ||
+                q.body.toLowerCase().includes(search) ||
+                (q.tags && q.tags.some(t => t.toLowerCase().includes(search)))
+            );
+        }
+
+        filteredQuestions = filtered;
+        updateStats();
+
+        // পেজিনেশন
+        const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        const end = Math.min(start + ITEMS_PER_PAGE, filtered.length);
+        const pageItems = filtered.slice(start, end);
+
+        if (pageItems.length === 0) {
+            questionList.innerHTML = `
+                <div class="no-questions">
+                    <i class="fas fa-comments"></i>
+                    <h3>কোনো প্রশ্ন নেই</h3>
+                    <p>প্রথম প্রশ্নটি করুন!</p>
+                </div>
+            `;
+            renderPagination(totalPages);
+            return;
+        }
+
+        let html = '';
+        pageItems.forEach((q, index) => {
+            const tags = q.tags || [];
+            const answers = q.answers ? Object.keys(q.answers).length : 0;
+            const votes = q.votes || 0;
+            const isAnswered = answers > 0;
+            const bestAnswerId = q.bestAnswer;
+
+            html += `
+                <div class="question-card" data-id="${q.id}">
+                    <div class="q-title">${escapeHtml(q.title)}</div>
+                    <div class="q-meta">
+                        <span><i class="fas fa-user"></i> ${escapeHtml(q.author || 'অতিথি')}</span>
+                        <span><i class="fas fa-clock"></i> ${getTimeAgo(q.timestamp)}</span>
+                    </div>
+                    <div class="q-body">${escapeHtml(q.body)}</div>
+                    <div class="q-stats">
+                        <span><i class="fas fa-comment"></i> ${answers} উত্তর</span>
+                        <span class="votes"><i class="fas fa-thumbs-up"></i> ${votes}</span>
+                        ${isAnswered ? '<span class="answered"><i class="fas fa-check-circle"></i> উত্তরপ্রাপ্ত</span>' : '<span><i class="fas fa-hourglass-half"></i> উত্তর নেই</span>'}
+                        ${bestAnswerId ? '<span class="answered"><i class="fas fa-star" style="color:var(--secondary);"></i> সেরা উত্তর</span>' : ''}
+                    </div>
+                    ${tags.length > 0 ? '<div class="q-tags">' + tags.map(t => '<span class="tag">' + escapeHtml(t) + '</span>').join('') + '</div>' : ''}
+                    <div class="q-actions">
+                        <button class="vote-btn" data-id="${q.id}" data-vote="up"><i class="fas fa-thumbs-up"></i></button>
+                        <span style="color:var(--gray);font-size:0.8rem;">${votes}</span>
+                        ${currentUser ? <button class="delete-btn" data-id="${q.id}" title="ডিলিট"><i class="fas fa-trash"></i></button> : ''}
+                    </div>
+                </div>
+            `;
+        });
+
+        questionList.innerHTML = html;
+
+        // ক্লিক ইভেন্ট
+        document.querySelectorAll('.question-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.closest('button')) return;
+                const id = this.getAttribute('data-id');
+                openQuestion(id);
+            });
+        });
+
+        // ভোট ইভেন্ট
+        document.querySelectorAll('.vote-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const id = this.getAttribute('data-id');
+                if (!currentUser) {
+                    showToast('❌ ভোট দিতে লগইন করুন!', 'error');
+                    return;
+                }
+                voteQuestion(id);
+            });
+        });
+
+        // ডিলিট ইভেন্ট
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (confirm('আপনি কি এই প্রশ্নটি ডিলিট করতে চান?')) {
+                    const id = this.getAttribute('data-id');
+                    deleteQuestion(id);
+                }
+            });
+        });
+
+        renderPagination(totalPages);
+    }
+
+    function renderPagination(totalPages) {
+        if (!pagination) return;
+        if (totalPages <= 1) { pagination.innerHTML = ''; return; }
+
+        let html = '';
+        html += <button onclick="window._forumGoPage(${currentPage - 1})" ${currentPage <= 1 ? 'disabled' : ''}><i class="fas fa-chevron-left"></i></button>;
+        for (let i = 1; i <= totalPages; i++) {
+            html += <button class="${i === currentPage ? 'active' : ''}" onclick="window._forumGoPage(${i})">${i}</button>;
+        }
+        html += <button onclick="window._forumGoPage(${currentPage + 1})" ${currentPage >= totalPages ? 'disabled' : ''}><i class="fas fa-chevron-right"></i></button>;
+        pagination.innerHTML = html;
+    }
+
+    window._forumGoPage = function(page) {
+        const totalPages = Math.ceil(filteredQuestions.length / ITEMS_PER_PAGE) || 1;
+        if (page < 1 || page > totalPages) return;
+        currentPage = page;
+        renderQuestions(allQuestions);
+        document.querySelector('.forum-container').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // ===== Load from Firebase =====
+    function loadFromFirebase() {
+        if (!database) {
+            allQuestions = demoQuestions;
+            renderQuestions(allQuestions);
+            return;
+        }
+
+        database.ref('forum/questions').orderByChild('timestamp').limitToLast(100).on('value', function(snapshot) {
+            const data = snapshot.val();
+            if (data) {
+                const keys = Object.keys(data);
+                const questions = [];
+                for (let i = 0; i < keys.length; i++) {
+                    const q = data[keys[i]];
+                    q.id = keys[i];
+                    questions.push(q);
+                }
+                allQuestions = questions.reverse();
+                renderQuestions(allQuestions);
+            } else {
+                allQuestions = [];
+                renderQuestions(allQuestions);
+            }
+        });
+    }
+
+    // ===== Ask Question =====
+    function askQuestion() {
+        const title = titleInput.value.trim();
+        const body = bodyInput.value.trim();
+        const tags = tagsInput.value.trim();
+        const imageFile = imageInput.files[0];
+
+        if (!currentUser) {
+            showToast('❌ প্রশ্ন করতে লগইন করুন!', 'error');
+            return;
+        }
+
+        if (!title || !body) {
+            showToast('❌ শিরোনাম ও বিস্তারিত দিন!', 'error');
+            return;
+        }
+
+        const tagArray = tags ? tags.split(',').map(t => t.trim()).filter(t => t) : [];
+        const newQuestion = {
+            title: title,
+            body: body,
+            tags: tagArray,
+            author: currentUser.displayName || currentUser.email || 'কৃষক',
+            timestamp: Date.now(),
+            votes: 0,
+            answers: {},
+            bestAnswer: null
+        };
+
+        if (database) {
+            database.ref('forum/questions').push(newQuestion)
+                .then(() => {
+                    showToast('✅ প্রশ্ন করা হয়েছে!', 'success');
+                    titleInput.value = '';
+                    bodyInput.value = '';
+                    tagsInput.value = '';
+                    imageInput.value = '';
+                })
+                .catch(e => {
+                    showToast('❌ প্রশ্ন করা যায়নি!', 'error');
+                    console.error(e);
+                });
+        } else {
+            newQuestion.id = generateId();
+            demoQuestions.unshift(newQuestion);
+            allQuestions = demoQuestions;
+            renderQuestions(allQuestions);
+            showToast('✅ ডেমো: প্রশ্ন করা হয়েছে!', 'success');
+            titleInput.value = '';
+            bodyInput.value = '';
+            tagsInput.value = '';
+            imageInput.value = '';
+        }
+    }
+
+    // ===== Open Question Modal =====
+    function openQuestion(id) {
+        if (!modal) return;
+        let question = null;
+
+        // সব প্রশ্নে খুঁজি
+        for (let i = 0; i < allQuestions.length; i++) {
+            if (allQuestions[i].id == id) {
+                question = allQuestions[i];
+                break;
+            }
+        }
+
+        if (!question) {
+            if (database) {
+                database.ref('forum/questions/' + id).once('value', function(snapshot) {
+                    const q = snapshot.val();
+                    if (q) {
+                        q.id = id;
+                        const idx = allQuestions.findIndex(item => item.id === id);
+                        if (idx === -1) allQuestions.push(q);
+                        else allQuestions[idx] = q;
+                        showModalContent(q);
+                    } else {
+                        showToast('❌ প্রশ্ন খুঁজে পাওয়া যায়নি', 'error');
+                    }
+                });
+                return;
+            }
+            showToast('❌ প্রশ্ন খুঁজে পাওয়া যায়নি', 'error');
+            return;
+        }
+
+        showModalContent(question);
+    }
+
+    function showModalContent(q) {
+        const answers = q.answers || {};
+        const answerKeys = Object.keys(answers);
+        const bestAnswerId = q.bestAnswer;
+
+        let answersHtml = '';
+        if (answerKeys.length === 0) {
+            answersHtml = '<p style="color:var(--gray);">এখনো কোনো উত্তর নেই। প্রথম উত্তরটি দিন!</p>';
+        } else {
+            // সেরা উত্তর আগে দেখাই
+            let sortedKeys = [...answerKeys];
+            if (bestAnswerId) {
+                sortedKeys = [bestAnswerId, ...sortedKeys.filter(k => k !== bestAnswerId)];
+            }
+            sortedKeys.forEach(key => {
+                const a = answers[key];
+                const isBest = key === bestAnswerId;
+                answersHtml += `
+                    <div class="answer-item" data-answer-id="${key}">
+                        <div class="a-meta">
+                            <span><i class="fas fa-user"></i> ${escapeHtml(a.author || 'অতিথি')}</span>
+                            <span>${getTimeAgo(a.timestamp)}</span>
+                            ${isBest ? '<span class="best-answer"><i class="fas fa-star"></i> সেরা উত্তর</span>' : ''}
+                            <span><i class="fas fa-thumbs-up"></i> ${a.votes || 0}</span>
+                        </div>
+                        <div class="a-text">${escapeHtml(a.text)}</div>
+                        <div class="a-actions">
+                            <button class="vote-btn" data-qid="${q.id}" data-aid="${key}" data-vote="up"><i class="fas fa-thumbs-up"></i></button>
+                            ${!isBest && currentUser ? <button class="best-btn" data-qid="${q.id}" data-aid="${key}"><i class="fas fa-star" style="color:var(--secondary);"></i> সেরা করুন</button> : ''}
+                            ${currentUser ? <button class="delete-btn" data-qid="${q.id}" data-aid="${key}"><i class="fas fa-trash"></i></button> : ''}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        const tags = q.tags || [];
+
+        modalBody.innerHTML = `
+            <button class="close-modal" id="modalCloseBtn">&times;</button>
+            <h3 class="modal-title">${escapeHtml(q.title)}</h3>
+            <div class="modal-meta">
+                <span><i class="fas fa-user"></i> ${escapeHtml(q.author || 'অতিথি')}</span>
+                <span><i class="fas fa-clock"></i> ${getTimeAgo(q.timestamp)}</span>
+                <span><i class="fas fa-thumbs-up"></i> ${q.votes || 0} ভোট</span>
+                <span><i class="fas fa-comment"></i> ${Object.keys(q.answers || {}).length} উত্তর</span>
+            </div>
+            ${tags.length > 0 ? '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">' + tags.map(t => '<span style="background:var(--bg);padding:2px 14px;border-radius:20px;font-size:0.8rem;color:var(--primary);">' + escapeHtml(t) + '</span>').join('') + '</div>' : ''}
+            <div class="modal-body-text">${escapeHtml(q.body)}</div>
+            ${q.image ? <img src="${q.image}" alt="প্রশ্নের ছবি" class="modal-image" /> : ''}
+            <div class="modal-answers">
+                <h4 style="color:var(--primary);margin-bottom:8px;"><i class="fas fa-comments"></i> উত্তরসমূহ</h4>
+                ${answersHtml}
+            </div>
+            <div class="answer-form">
+                <input type="text" id="answerInput" placeholder="💬 আপনার উত্তর লিখুন..." />
+                <button class="btn btn-primary" id="answerBtn"><i class="fas fa-paper-plane"></i> উত্তর দিন</button>
+            </div>
+        `;
+
+        modal.classList.add('show');
+
+        // Close button
+        document.getElementById('modalCloseBtn').addEventListener('click', () => modal.classList.remove('show'));
+
+        // Answer button
+        document.getElementById('answerBtn').addEventListener('click', function() {
+            const text = document.getElementById('answerInput').value.trim();
+            if (!text) {
+                showToast('❌ উত্তর লিখুন!', 'error');
+                return;
+            }
+            if (!currentUser) {
+                showToast('❌ উত্তর দিতে লগইন করুন!', 'error');
+                return;
+            }
+            submitAnswer(q.id, text);
+        });
+
+        // Answer vote
+        document.querySelectorAll('.answer-item .vote-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const qid = this.getAttribute('data-qid');
+                const aid = this.getAttribute('data-aid');
+                if (!currentUser) {
+                    showToast('❌ ভোট দিতে লগইন করুন!', 'error');
+                    return;
+                }
+                voteAnswer(qid, aid);
+            });
+        });
+
+        // Best answer
+        document.querySelectorAll('.answer-item .best-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const qid = this.getAttribute('data-qid');
+                const aid = this.getAttribute('data-aid');
+                if (!currentUser) {
+                    showToast('❌ লগইন করুন!', 'error');
+                    return;
+                }
+                markBestAnswer(qid, aid);
+            });
+        });
+
+        // Delete answer
+        document.querySelectorAll('.answer-item .delete-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const qid = this.getAttribute('data-qid');
+                const aid = this.getAttribute('data-aid');
+                if (confirm('আপনি কি এই উত্তরটি ডিলিট করতে চান?')) {
+                    deleteAnswer(qid, aid);
+                }
+            });
+        });
+
+        // Click outside close
+        modal.onclick = function(e) {
+            if (e.target === this) modal.classList.remove('show');
+        };
+    }
+
+    // ===== Answer Functions =====
+    function submitAnswer(qId, text) {
+        const newAnswer = {
+            text: text,
+            author: currentUser.displayName || currentUser.email || 'কৃষক',
+            timestamp: Date.now(),
+            votes: 0
+        };
+
+        if (database) {
+            database.ref('forum/questions/' + qId + '/answers').push(newAnswer)
+                .then(() => {
+                    showToast('✅ উত্তর দেওয়া হয়েছে!', 'success');
+                    document.getElementById('answerInput').value = '';
+                    openQuestion(qId);
+                })
+                .catch(e => {
+                    showToast('❌ উত্তর দেওয়া যায়নি!', 'error');
+                    console.error(e);
+                });
+        } else {
+            const q = allQuestions.find(item => item.id == qId);
+            if (q) {
+                if (!q.answers) q.answers = {};
+                const id = generateId();
+                q.answers[id] = newAnswer;
+                showToast('✅ ডেমো: উত্তর দেওয়া হয়েছে!', 'success');
+                document.getElementById('answerInput').value = '';
+                openQuestion(qId);
+            }
+        }
+    }
+
+    function voteQuestion(qId) {
+        if (database) {
+            database.ref('forum/questions/' + qId + '/votes').transaction(function(current) {
+                return (current || 0) + 1;
+            }).then(() => {
+                showToast('✅ ভোট দেওয়া হয়েছে!', 'success');
+            }).catch(e => {
+                showToast('❌ ভোট দেওয়া যায়নি!', 'error');
+                console.error(e);
+            });
+        } else {
+            const q = allQuestions.find(item => item.id == qId);
+            if (q) {
+                q.votes = (q.votes || 0) + 1;
+                renderQuestions(allQuestions);
+                showToast('✅ ডেমো: ভোট দেওয়া হয়েছে!', 'success');
+            }
+        }
+    }
+
+    function voteAnswer(qId, aId) {
+        if (database) {
+            database.ref('forum/questions/' + qId + '/answers/' + aId + '/votes').transaction(function(current) {
+                return (current || 0) + 1;
+            }).then(() => {
+                showToast('✅ ভোট দেওয়া হয়েছে!', 'success');
+            }).catch(e => {
+                showToast('❌ ভোট দেওয়া যায়নি!', 'error');
+                console.error(e);
+            });
+        } else {
+            const q = allQuestions.find(item => item.id == qId);
+            if (q && q.answers && q.answers[aId]) {
+                q.answers[aId].votes = (q.answers[aId].votes || 0) + 1;
+                openQuestion(qId);
+                showToast('✅ ডেমো: ভোট দেওয়া হয়েছে!', 'success');
+            }
+        }
+    }
+
+    function markBestAnswer(qId, aId) {
+        if (database) {
+            database.ref('forum/questions/' + qId + '/bestAnswer').set(aId)
+                .then(() => {
+                    showToast('✅ সেরা উত্তর চিহ্নিত করা হয়েছে!', 'success');
+                    openQuestion(qId);
+                })
+                .catch(e => {
+                    showToast('❌ করা যায়নি!', 'error');
+                    console.error(e);
+                });
+        } else {
+            const q = allQuestions.find(item => item.id == qId);
+            if (q) {
+                q.bestAnswer = aId;
+                openQuestion(qId);
+                showToast('✅ ডেমো: সেরা উত্তর চিহ্নিত করা হয়েছে!', 'success');
+            }
+        }
+    }
+
+    function deleteQuestion(qId) {
+        if (database) {
+            database.ref('forum/questions/' + qId).remove()
+                .then(() => {
+                    showToast('✅ প্রশ্ন ডিলিট করা হয়েছে!', 'success');
+                })
+                .catch(e => {
+                    showToast('❌ ডিলিট করা যায়নি!', 'error');
+                    console.error(e);
+                });
+        } else {
+            allQuestions = allQuestions.filter(q => q.id != qId);
+            demoQuestions = allQuestions;
+            renderQuestions(allQuestions);
+            showToast('✅ ডেমো: প্রশ্ন ডিলিট করা হয়েছে!', 'success');
+        }
+    }
+
+    function deleteAnswer(qId, aId) {
+        if (database) {
+            database.ref('forum/questions/' + qId + '/answers/' + aId).remove()
+                .then(() => {
+                    showToast('✅ উত্তর ডিলিট করা হয়েছে!', 'success');
+                    openQuestion(qId);
+                })
+                .catch(e => {
+                    showToast('❌ ডিলিট করা যায়নি!', 'error');
+                    console.error(e);
+                });
+        } else {
+            const q = allQuestions.find(item => item.id == qId);
+            if (q && q.answers && q.answers[aId]) {
+                delete q.answers[aId];
+                openQuestion(qId);
+                showToast('✅ ডেমো: উত্তর ডিলিট করা হয়েছে!', 'success');
+            }
+        }
+    }
+
+    // ===== Filter & Search =====
+    function setupFilters() {
+        document.querySelectorAll('.filter-tag').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-tag');
+                currentPage = 1;
+                renderQuestions(allQuestions);
+            });
+        });
+    }
+
+    function setupSearch() {
+        if (!searchInput) return;
+        searchInput.addEventListener('input', function() {
+            currentSearch = this.value;
+            currentPage = 1;
+            renderQuestions(allQuestions);
+        });
+    }
+
+    // ===== Firebase Auth =====
+    function initFirebase() {
+        if (typeof firebase !== 'undefined' && firebase.apps.length > 0) {
+            if (firebase.apps.length === 0) {
+                try {
+                    firebase.initializeApp(window.firebaseConfig);
+                } catch(e) {
+                    // কনফিগ না থাকলে
+                }
+            }
+            if (firebase.apps.length > 0) {
+                database = firebase.database();
+                console.log('✅ Firebase সংযুক্ত');
+
+                if (firebase.auth) {
+                    firebase.auth().onAuthStateChanged(function(user) {
+                        if (user) {
+                            currentUser = user;
+                            if (loginWarning) loginWarning.style.display = 'none';
+                            console.log('👤 ইউজার:', user.displayName || user.email);
+                        } else {
+                            currentUser = null;
+                            if (loginWarning) loginWarning.style.display = 'inline';
+                            console.log('👤 ইউজার লগইন নেই');
+                        }
+                    });
+                }
+                loadFromFirebase();
+                return;
+            }
+        }
+
+        console.warn('⚠️ Firebase পাওয়া যায়নি, ডেমো মোড চলছে');
+        allQuestions = demoQuestions;
+        renderQuestions(allQuestions);
+    }
+
+    // ===== Dark Mode =====
+    (function() {
+        const toggleBtn = document.getElementById('darkToggle');
+        const body = document.body;
+        function toggleDark() {
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+            if (toggleBtn) {
+                toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>লাইট</span>' : '<i class="fas fa-moon"></i> <span>ডার্ক</span>';
+            }
+        }
+        function loadDark() {
+            try {
+                const saved = localStorage.getItem('darkMode');
+                if (saved === 'enabled') {
+                    body.classList.add('dark');
+                    if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>লাইট</span>';
+                }
+            } catch(e) {}
+        }
+        if (toggleBtn) toggleBtn.addEventListener('click', toggleDark);
+        document.addEventListener('DOMContentLoaded', loadDark);
+    })();
+
+    // ===== DOM Ready =====
+    document.addEventListener('DOMContentLoaded', function() {
+        if (askBtn) askBtn.addEventListener('click', askQuestion);
+        if (closeModal) closeModal.addEventListener('click', () => modal.classList.remove('show'));
+
+        setupFilters();
+        setupSearch();
+
+        // যদি Firebase কনফিগ ইতিমধ্যে লোড হয়ে থাকে
+        if (window.firebaseConfig) {
+            initFirebase();
+        } else {
+            // কনফিগ না থাকলে ডেমো
+            allQuestions = demoQuestions;
+            renderQuestions(allQuestions);
+            console.log('📢 ফায়ারবেস কনফিগ নেই, ডেমো ডাটা দেখাচ্ছে');
+        }
+
+        // Enter key support
+        if (titleInput && bodyInput) {
+            titleInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    bodyInput.focus();
+                }
+            });
+        }
+
+        console.log('👥 কমিউনিটি ফোরাম লোড হয়েছে!');
+    });
+
+})();
+</script>
+
+</body>
+</html>

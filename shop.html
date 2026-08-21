@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+    <!-- ===== Basic Meta ===== -->
+<meta name="description" content="কৃষি সহায়তা - কৃষকদের জন্য ডিজিটাল প্ল্যাটফর্ম। ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স ও আরও অনেক কিছু।" />
+<meta name="keywords" content="কৃষি, কৃষক, ফসল, বাজারদর, যন্ত্রপাতি, বাংলাদেশ, চাষাবাদ" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="কৃষি সহায়তা টিম" />
+
+<!-- ===== Open Graph (Facebook/WhatsApp) ===== -->
+<meta property="og:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta property="og:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-username.github.io/krisok-agri-platform/" />
+<meta property="og:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="কৃষি সহায়তা - কৃষকের বন্ধু, উন্নতির ঠিকানা" />
+<meta name="twitter:description" content="ফসলের তথ্য, বাজারদর, যন্ত্রপাতি, ই-কমার্স—একই প্ল্যাটফর্মে।" />
+<meta name="twitter:image" content="https://your-username.github.io/krisok-agri-platform/assets/images/og-image.jpg" />
+
+<!-- ===== Canonical ===== -->
+<link rel="canonical" href="https://your-username.github.io/krisok-agri-platform/" />
+
+
+    <!-- ===== Google Analytics ===== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ENS6VCHEF"></script>
+<script src="js/analytics.js"></script>
+
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <title>কৃষি বাজার - কৃষি সহায়তা</title>
+    
+    <!-- ===== ফন্ট ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- ===== আইকন ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* ===== ই-কমার্স স্টাইল ===== */
+        .shop-container {
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+        
+        /* ===== ফিল্টার বার ===== */
+        .filter-bar {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+        .filter-bar select,
+        .filter-bar input {
+            padding: 10px 16px;
+            border: 2px solid #d8e8d8;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            outline: none;
+            background: var(--bg);
+            color: var(--text-dark);
+            flex: 1;
+            min-width: 140px;
+        }
+        .filter-bar select:focus,
+        .filter-bar input:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px rgba(46,125,94,0.1);
+        }
+        .filter-bar .cart-btn {
+            padding: 10px 24px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .filter-bar .cart-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.04);
+        }
+        .filter-bar .cart-btn .badge {
+            background: var(--secondary);
+            color: var(--text-dark);
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+        }
+        
+        /* ===== পণ্য গ্রিড ===== */
+        .product-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 600px) {
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 992px) {
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .product-card .product-image {
+            width: 100%;
+            height: 200px;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        .product-card .product-body {
+            padding: 20px;
+        }
+        .product-card .product-body .product-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .product-card .product-body .product-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+        .product-card .product-body .product-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .product-card .product-body .product-price i {
+            font-size: 1rem;
+        }
+        .product-card .product-body .product-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 8px 0;
+        }
+        .product-card .product-body .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .product-card .product-body .product-actions .btn-add {
+            flex: 1;
+            padding: 10px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .product-card .product-body .product-actions .btn-add:hover {
+            background: var(--primary-dark);
+        }
+        .product-card .product-body .product-actions .btn-add.added {
+            background: var(--success);
+        }
+        
+        /* ===== নো রেজাল্ট ===== */
+        .no-products {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gray);
+        }
+        .no-products i {
+            font-size: 3rem;
+            color: #ccc;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        body.dark .filter-bar { background: var(--white); }
+        body.dark .product-card { background: var(--white); }
+        body.dark .filter-bar select,
+        body.dark .filter-bar input { background: var(--white); border-color: var(--dark-border); color: var(--text-dark); }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌾</span>
+                <h1>কৃষি<span>সহায়তা</span></h1>
+            </a>
+            <div class="header-actions">
+                <button class="dark-toggle" id="darkToggle">
+                    <i class="fas fa-moon"></i> <span>ডার্ক</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <div class="container">
+        <div class="nav-inner">
+            <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+            <a href="crops.html"><i class="fas fa-seedling"></i> ফসল</a>
+            <a href="bazardor.html"><i class="fas fa-tags"></i> বাজারদর</a>
+            <a href="equipment.html"><i class="fas fa-tractor"></i> যন্ত্রপাতি</a>
+            <a href="rental.html"><i class="fas fa-hand-holding-usd"></i> ভাড়া</a>
+            <a href="order.html"><i class="fas fa-clipboard-list"></i> অর্ডার</a>
+            <a href="calendar.html"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</a>
+            <a href="disease-detection.html"><i class="fas fa-microscope"></i> রোগ শনাক্ত</a>
+            <a href="chatbot.html"><i class="fas fa-robot"></i> চ্যাটবট</a>
+            <a href="forum.html"><i class="fas fa-users"></i> ফোরাম</a>
+            <a href="shop.html" class="active"><i class="fas fa-store"></i><span data-i18n="nav_shop">বাজার</span></a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> সম্পর্কে</a>
+            <a href="contact.html"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+            <a href="chat.html"><i class="fas fa-comments"></i> চ্যাট</a>
+            <a href="cart.html"><i class="fas fa-comments"></i> কার্ট</a>
+            <a href="admin.html"><i class="fas fa-user-shield"></i> অ্যাডমিন</a>
+            <a href="admin-backup.html"><i class="fas fa-database"></i> ব্যাকআপ</a>
+            <a href="profile.html"><i class="fas fa-user"></i> প্রোফাইল</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+            <a href="admin-reports.html">রিপোর্ট</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+    <div class="container">
+        <div class="shop-container">
+            
+            <h2 class="section-title"><i class="fas fa-store"></i> কৃষি বাজার</h2>
+            <p style="color:var(--text-light); margin-bottom:20px;">
+                সরাসরি কৃষকদের কাছ থেকে তাজা ফসল কিনুন।
+            </p>
+            
+            <!-- ===== ফিল্টার বার ===== -->
+            <div class="filter-bar">
+                <select id="filterCategory">
+                    <option value="all">সব ক্যাটাগরি</option>
+                    <option value="শাকসবজি">শাকসবজি</option>
+                    <option value="ফল">ফল</option>
+                    <option value="ডাল">ডাল</option>
+                    <option value="মসলা">মসলা</option>
+                    <option value="ধান">ধান</option>
+                </select>
+                <select id="filterDistrict">
+                    <option value="all">সব জেলা</option>
+                </select>
+                <input type="text" id="filterSearch" placeholder="🔍 ফসল খুঁজুন..." />
+                <a href="cart.html" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i> কার্ট
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+            </div>
+            
+            <!-- ===== পণ্য গ্রিড ===== -->
+            <div class="product-grid" id="productGrid">
+                <!-- JavaScript দিয়ে লোড হবে -->
+            </div>
+            
+            <!-- ===== নো রেজাল্ট ===== -->
+            <div class="no-products" id="noProducts" style="display:none;">
+                <i class="fas fa-search"></i>
+                <h3>কোনো পণ্য পাওয়া যায়নি</h3>
+                <p>অন্য কোনো ফসল খুঁজে দেখুন</p>
+            </div>
+            
+        </div>
+        
+        <div style="margin:20px 0;">
+            <a href="index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> হোমপেজে ফিরে যান</a>
+        </div>
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🌾 কৃষি সহায়তা(Agricultural Assistance) 🌾</h4>
+        <p style="color:#b3d9b3; font-size:0.95rem;">আধুনিক কৃষি, সুস্থ ফসল, নিশ্চিত সমৃদ্ধি (অভি)।</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>দ্রুত লিংক</h4>
+        <ul>
+          <li><a href="crops.html">ফসলের তথ্য</a></li>
+          <li><a href="equipment.html">যন্ত্রপাতি</a></li>
+          <li><a href="rental.html">ভাড়া ক্যালকুলেটর</a></li>
+          <li><a href="bazardor.html">বাজারদর</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">টার্মস অ্যান্ড কন্ডিশন</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> ১৬১২৩</li>
+          <li><i class="fas fa-envelope"></i> info@krishisahayata.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ২০২৬ কৃষি সহায়তা প্ল্যাটফর্ম | সব অধিকার সংরক্ষিত</p>
+      <p style="opacity:0.6; font-size:0.85rem; margin-top:4px;">
+        <i class="fas fa-code"></i> প্রযুক্তির সহায়তায় কৃষির উন্নয়ন
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="js/dark-mode.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/language.js"></script>
+<script src="js/shop.js"></script>
+
+</body>
+</html>
